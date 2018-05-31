@@ -1,0 +1,11 @@
+.holdingsListContainer {
+    max-width: 960px;
+    margin: auto;
+}
+
+.holdingsListCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
