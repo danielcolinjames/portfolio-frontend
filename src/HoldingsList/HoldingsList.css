@@ -1,11 +1,12 @@
 .holdingsListContainer {
     max-width: 960px;
-    margin: auto;
+    margin: 160px auto auto auto;
 }
 
 .holdingsListCardContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    align-items: center;
+    float: left;
 }
