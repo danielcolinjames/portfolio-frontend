@@ -1,8 +1,82 @@
 .holdingCard {
     height: 300px;
     min-width: 380px;
+    max-width: 380px;
     background-color: white;
     margin: 36px;
     border-radius: 16px;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.holdingCardTopBar {
+    height: 48px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.holdingCurrencyInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.holdingCurrencyLogo {
+    height: 32px;
+    width: 32px;
+    margin: 8px;
+}
+
+.holdingCurrencyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.holdingCurrencySymbol {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-size: 16;
+    color: #000;
+}
+
+.holdingCurrencyName {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 16px;
+    color: #959595;
+}
+
+.holdingCurrencyAmountContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 48px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.holdingCurrencyAmountInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 5px 10px;
+}
+
+.holdingCurrencyAmountLabel {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingCurrencyAmountBalance {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0px;
 }
