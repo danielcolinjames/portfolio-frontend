@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'SFUIDisplay-Regular';
+  src: local('SFUIDisplay-Regular'), url(./fonts/SF-UI-Display-Regular.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'SFUIDisplay-Bold';
+  src: local('SFUIDisplay-Bold'), url(./fonts/SF-UI-Display-Bold.otf) format('otf');
+}
+
 .App {
   text-align: center;
 }
