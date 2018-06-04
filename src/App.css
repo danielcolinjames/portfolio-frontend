@@ -8,6 +8,11 @@
   src: local('SFUIDisplay-Bold'), url(./fonts/SF-UI-Display-Bold.otf) format('otf');
 }
 
+@font-face {
+  font-family: 'SFUIDisplay-Light';
+  src: local('SFUIDisplay-Light'), url(./fonts/SF-UI-Display-Light.otf) format('otf');
+}
+
 .App {
   /* text-align: center; */
 }
