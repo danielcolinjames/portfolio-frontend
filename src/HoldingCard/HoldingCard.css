@@ -7,6 +7,9 @@
 /* -------------------------------------------- */
 
 .holdingCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 300px;
     min-width: 380px;
     max-width: 380px;
@@ -244,3 +247,35 @@
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 
+.holdingCardBottomBar {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 20px 20px 20px 0;
+    border-right: 1px solid #4a90e2;
+}
+
+.holdingGraphContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.holdingPriceInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px 10px 0 0;
+}
+
+.holdingPriceLabel {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingPriceValue {
+    margin: 2px 0 0 0;
+    color: #4a90e2;
+}

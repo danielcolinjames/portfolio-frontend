@@ -1,5 +1,6 @@
 import React from 'react';
 import './HoldingCard.css';
+import { Sparklines, SparklinesCurve, SparklinesSpots } from 'react-sparklines';
 
 // TODO: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 import btc from '../images/logos/bitcoin-logo@3x.png';
@@ -32,14 +33,32 @@ const HoldingCard = (props) => {
                     <span className='negative'>-</span>
                 )}
 
-                {/* display dollars. Math.abs is used because otherwise the minus sign will show up after the dollar sign */}
+                {/* Display dollars. Math.abs is used because otherwise the minus sign will show up after the dollar sign */}
                 <span className='dollars'>${Math.abs(props.profit).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                 
-                {/* display cents. */}
+                {/* Display cents. Right now it does not show leading zeros so it looks weird */}
                 <span className='cents'>.{Math.abs(Math.round(props.profit*100)%100)}</span>
             </p>
         </div>
       );
+    }
+
+    // only show price section on bottom right if price is passed in
+    let priceSection = null;
+    if (typeof(props.price) !== 'undefined') {
+        priceSection = (
+            <div className='holdingPriceInfoContainer'>
+                <p className='holdingPriceLabel'>
+                    Price
+                </p>
+                <p className='holdingPriceValue'>
+                <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                <span className='cents'>.{Math.abs(Math.round(props.price*100)%100)}</span>
+                </p>
+            </div>
+        );
+    } else {
+        // TODO: priceSection gets populated with Value data
     }
 
     return(
@@ -100,7 +119,28 @@ const HoldingCard = (props) => {
             </div>
             {/* Bottom section */}
             <div className='holdingCardBottomBar'>
-
+                <div className='holdingCardGraphContainer'>
+                    <Sparklines
+                        height={30}
+                        data={props.data}
+                        style={{
+                            margin: 0
+                        }}>
+                        {/* currently not possible to have a gradient fill: https://github.com/borisyankov/react-sparklines/issues/87 */}
+                        <SparklinesCurve
+                            color='#f7931a'
+                            style={{
+                                margin: 0
+                            }}/>
+                        {/* This library can make spots on the chart, but the only option is end AND start spots */}
+                        {/* <SparklinesSpots
+                            size={0.5}
+                            style={{
+                                stroke: '#f7931a', strokeWidth: 3, fill: '#f7931a'
+                            }} /> */}
+                    </Sparklines>
+                </div>
+                {priceSection}
             </div>
         </div>
     );
