@@ -27,7 +27,10 @@ class App extends Component {
               return <HoldingCard
                 symbol={holding.symbol}
                 name={holding.name}
-                balance={holding.balance}/>
+                balance={holding.balance}
+                value={holding.value}
+                profit={holding.profit}
+                price={holding.price}/>
             })}
         </HoldingsList>
       </div>
