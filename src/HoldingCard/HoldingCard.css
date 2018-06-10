@@ -1,0 +1,281 @@
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------- Main container -------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+.holdingCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    min-width: 380px;
+    max-width: 380px;
+    background-color: white;
+    margin: 36px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* ---------------- Top section --------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+.holdingCardTopBar {
+    height: 48px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.holdingCurrencyInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.holdingCurrencyLogo {
+    height: 32px;
+    width: 32px;
+    margin: 8px 8px 8px 0;
+}
+
+.holdingCurrencyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.holdingCurrencySymbol {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-size: 16;
+    color: #000;
+}
+
+.holdingCurrencyName {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 16px;
+    color: #959595;
+}
+
+.holdingCurrencyAmountContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 48px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.holdingCurrencyAmountInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 5px 10px;
+}
+
+.holdingCurrencyAmountLabel {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingCurrencyAmountBalance {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------- Middle section -------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+
+.holdingCardMiddleBar {
+    /* background-color: lightblue; */
+    margin-top: 17px;
+    height: 64px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dollars {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+}
+
+.cents {
+    font-family: 'SFUIDisplay-Light', sans-serif;
+}
+
+.positive {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    color: #7ed321;
+    margin-right: 2px;
+}
+
+.negative {
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    color: #f66b7c;
+    margin-right: 2px;
+}
+
+.holdingValueProfitContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0px 18px;
+}
+
+.holdingValueContainer {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    /* TODO: put this line on Profit instead so that it doesn't show up when there is no "Profit" value passed */
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.holdingValueLabel {
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingValueValue {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 2px 0px 0px 0px;
+}
+
+.holdingValueChangeContainer {
+    margin-left: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 18px;
+    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-size: 12px;
+}
+
+.holdingValueChangeTriangleUp {
+    width: 0; 
+    height: 0;
+    border-radius: 1px;
+    border-left: 4.3px solid transparent;
+    border-right: 4.3px solid transparent;
+    border-bottom: 7.9px solid rgba(126, 211, 33, 0.51);
+    margin-right: 5px;
+}
+
+.holdingValueChangeTriangleDown {
+    width: 0; 
+    height: 0;
+    border-radius: 1px;
+    border-left: 4.3px solid transparent;
+    border-right: 4.3px solid transparent;
+    border-top: 7.9px solid rgba(246, 107, 124, 0.51);
+    margin-right: 5px;
+}
+
+.holdingValueChangeValueUp {
+    margin: 0;
+    color: #7ed321;
+}
+
+.holdingValueChangeValueDown {
+    margin: 0;
+    color: #f66b7c;
+}
+
+.percentUp {
+    font-family: 'SFUIDisplay-Light', sans-serif;
+}
+
+.percentDown {
+    font-family: 'SFUIDisplay-Light', sans-serif;
+}
+
+.holdingProfitContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 48%;
+}
+
+.holdingProfitLabel {
+    font-family: 'SFUIDisplay-Regular';
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingProfitValue {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 2px 0px 0px 0px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------- Bottom section -------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+.holdingCardBottomBar {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 20px 20px 20px 0;
+    border-right: 1px solid #4a90e2;
+}
+
+.holdingGraphContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.holdingPriceInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px 10px 0 0;
+}
+
+.holdingPriceLabel {
+    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin: 0px;
+}
+
+.holdingPriceValue {
+    margin: 2px 0 0 0;
+    color: #4a90e2;
+}
