@@ -6,7 +6,8 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",
-    "react-sparklines": "^1.7.0"
+    "react-sparklines": "^1.7.0",
+    "react-vis": "^1.9.4"
   },
   "scripts": {
     "start": "react-scripts start",

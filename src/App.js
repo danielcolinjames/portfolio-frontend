@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header/Header';
 import HoldingCard from './HoldingCard/HoldingCard';
 import HoldingsList from './HoldingsList/HoldingsList';
+import ChartTest from './ChartTest/ChartTest';
 
 class App extends Component {
   state = {
@@ -36,6 +37,9 @@ class App extends Component {
                 />
             })}
         </HoldingsList>
+
+        {/* <ChartTest>
+        </ChartTest> */}
       </div>
     );
   }
