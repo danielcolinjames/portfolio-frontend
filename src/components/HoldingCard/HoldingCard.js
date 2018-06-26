@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Sparklines, SparklinesCurve } from 'react-sparklines';
 
 // TODO: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
-import btc from '../images/logos/bitcoin-logo@3x.png';
+import btc from '../../images/logos/bitcoin-logo@3x.png';
 
 // TODO: more robust currency formatting
 // const currencyFormatter = new Intl.NumberFormat('en-US', {

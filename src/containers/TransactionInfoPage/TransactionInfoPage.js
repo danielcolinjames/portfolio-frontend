@@ -1,11 +1,11 @@
 import React from 'react';
 import './TransactionInfoPage.css';
-import ChartTest from '../ChartTest/ChartTest';
+import ChartTest from '../../components/ChartTest/ChartTest';
 import { Link } from 'react-router-dom';
 
 // Images
-import refreshIcon from '../images/ui-icons/icon-refresh.svg';
-import leftArrow from '../images/ui-icons/icon-back-arrow.svg';
+import refreshIcon from '../../images/ui-icons/icon-refresh.svg';
+import leftArrow from '../../images/ui-icons/icon-back-arrow.svg';
 
 const TransactionInfoPage = (props) => {
     return (

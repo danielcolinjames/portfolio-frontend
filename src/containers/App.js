@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Header from './Header/Header';
+import Header from '../components/Header/Header';
 import HoldingsListPage from './HoldingsListPage/HoldingsListPage';
 import TransactionInfoPage from './TransactionInfoPage/TransactionInfoPage';
 

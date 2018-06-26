@@ -1,11 +1,10 @@
 import React from 'react';
-import HoldingsList from '../HoldingsList/HoldingsList';
-import HoldingCard from '../HoldingCard/HoldingCard';
+import HoldingCard from '../../components/HoldingCard/HoldingCard';
 import './HoldingsListPage.css';
 import { Link } from 'react-router-dom';
 
 // Images
-import rightArrow from '../images/ui-icons/icon-right-arrow.svg';
+import rightArrow from '../../images/ui-icons/icon-right-arrow.svg';
 
 const HoldingsListPage = (props) => {
     return (
