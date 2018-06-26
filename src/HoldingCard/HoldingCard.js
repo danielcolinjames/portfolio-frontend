@@ -1,6 +1,7 @@
 import React from 'react';
 import './HoldingCard.css';
-import { Sparklines, SparklinesCurve, SparklinesSpots } from 'react-sparklines';
+import { Link } from 'react-router-dom';
+import { Sparklines, SparklinesCurve } from 'react-sparklines';
 
 // TODO: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 import btc from '../images/logos/bitcoin-logo@3x.png';
@@ -63,6 +64,7 @@ const HoldingCard = (props) => {
 
     return(
         <div className='holdingCard'>
+        <Link className='holdingCardTransactionsLink' to={"transactions/" + props.symbol}>
             {/* Top section */}
             <div className='holdingCardTopBar'>
                 <div className='holdingCurrencyInfoContainer'>
@@ -142,6 +144,7 @@ const HoldingCard = (props) => {
                 </div>
                 {priceSection}
             </div>
+        </Link>
         </div>
     );
 }

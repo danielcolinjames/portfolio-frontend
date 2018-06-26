@@ -1,0 +1,127 @@
+#transactionInfoPage {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#transactionSidebar {
+    width: 320px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #eaeef1;
+    margin-top: 160px;
+    /* background-color: red; */
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.16);
+}
+
+#navigationControlsContainer {
+    height: 24px;
+    width: 100%;
+    /* background-color: black; */
+}
+
+#navigationControls {
+    margin: 27px 21px 0px 21px;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#transactionsHoldingsContainer {
+
+}
+
+.summaryButton {
+    transition-duration: .1s;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 88px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.summaryButton:hover {
+    transition-duration: .1s;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    transform: translate(0,-2px);
+}
+
+.summaryButton:active {
+    opacity: 0.6;
+    transition-duration: .1s;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.summaryButtonLink {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.summaryButton p {
+    font-family: Roboto;
+    font-size: 12px;
+    padding: 0 10px 0 0;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+#chartAndTransactionsOverlay {
+    /* TODO: figure out how to get this to draw over top of the chart. I think it's not working right now because of the way SVG renders. */
+
+    /* background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff); */
+
+    /* z-index: 2; */
+}
+
+#chartTest {
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.16);
+}
+
+#chartAndTransactions {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 320px;
+    margin-top: 160px;
+    width: 100%;
+}
+
+#transactionInfoHeader {
+    height: 44px;
+    background-color: rgba(114, 123, 133, 0.04);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.transactionEntry {
+    height: 56px;
+    background-color: #f2f3f5;
+}
+
+.transactionEntry2 {
+    height: 56px;
+}

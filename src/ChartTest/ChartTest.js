@@ -8,8 +8,6 @@ import {
     YAxis,
     LineSeries,
     MarkSeries,
-    Borders,
-    HorizontalGridLines,
     VerticalGridLines,
     GradientDefs,
     AreaSeries
@@ -34,7 +32,6 @@ const tipStyle = {
     justifyContent: 'center',
     alignItems: 'center',
     color: 'grey',
-    alignItems: 'center',
     margin: '20px',
 };
 
@@ -64,15 +61,14 @@ class ChartTest extends React.Component {
         const {hoveredCell} = this.state;
         
         return (
-            <div className='chartTest'>
+            <div id='chartTest'>
                 <FlexibleXYPlot
                     height={466}
-                    width={930}
 
                     margin={{
                         top: 50,
                         right: 100,
-                        left: 100,
+                        left: 0,
                         bottom: 50}}>
                     
                     <GradientDefs>
@@ -85,8 +81,8 @@ class ChartTest extends React.Component {
                     <XAxis
                         tickTotal={10} />
                     <YAxis
+                        tickTotal={7}
                         orientation='right'
-                        width={96}
                         style={{
                             fontFamily: 'SFUIDisplay-Bold, sans-serif',
                             fontSize: '12px',

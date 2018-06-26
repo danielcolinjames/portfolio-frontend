@@ -14,9 +14,29 @@
     min-width: 380px;
     max-width: 380px;
     background-color: white;
+    transition-duration: 0.2s;
     margin: 36px;
     border-radius: 16px;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.holdingCard:hover {
+    /* This is just a temporary measure */
+    /* background-color: #eee; */
+    transition-duration: .2s;
+    box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    transform: translate(0, -2px);
+}
+
+.holdingCard:active {
+    transition-duration: .2s;
+    opacity: 0.6;
+}
+
+.holdingCardTransactionsLink {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 /* -------------------------------------------- */
