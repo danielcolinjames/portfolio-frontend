@@ -77,13 +77,15 @@
 }
 
 .holdingCurrencySymbol {
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     font-size: 16;
     color: #000;
 }
 
 .holdingCurrencyName {
-    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
     font-size: 16px;
     color: #959595;
 }
@@ -107,14 +109,16 @@
 }
 
 .holdingCurrencyAmountLabel {
-    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
     font-size: 14px;
     color: #9b9b9b;
     margin: 0px;
 }
 
 .holdingCurrencyAmountBalance {
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     font-size: 16px;
     color: #4a4a4a;
     margin: 0px;
@@ -128,9 +132,7 @@
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 
-
 .holdingCardMiddleBar {
-    /* background-color: lightblue; */
     margin-top: 17px;
     height: 64px;
     width: 100%;
@@ -139,21 +141,25 @@
 }
 
 .dollars {
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 
 .cents {
-    font-family: 'SFUIDisplay-Light', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
 }
 
 .positive {
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     color: #7ed321;
     margin-right: 2px;
 }
 
 .negative {
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     color: #f66b7c;
     margin-right: 2px;
 }
@@ -176,7 +182,8 @@
 }
 
 .holdingValueLabel {
-    font-family: 'SFUIDisplay-Regular';
+    font-family: 'Roboto';
+    font-weight: normal;
     font-size: 14px;
     color: #9b9b9b;
     margin: 0px;
@@ -196,7 +203,8 @@
     justify-content: flex-start;
     align-items: center;
     height: 18px;
-    font-family: 'SFUIDisplay-Bold', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     font-size: 12px;
 }
 
@@ -231,11 +239,13 @@
 }
 
 .percentUp {
-    font-family: 'SFUIDisplay-Light', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
 }
 
 .percentDown {
-    font-family: 'SFUIDisplay-Light', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
 }
 
 .holdingProfitContainer {
@@ -247,7 +257,8 @@
 }
 
 .holdingProfitLabel {
-    font-family: 'SFUIDisplay-Regular';
+    font-family: 'Roboto';
+    font-weight: normal;
     font-size: 14px;
     color: #9b9b9b;
     margin: 0px;
@@ -289,7 +300,8 @@
 }
 
 .holdingPriceLabel {
-    font-family: 'SFUIDisplay-Regular', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
     font-size: 14px;
     color: #9b9b9b;
     margin: 0px;
