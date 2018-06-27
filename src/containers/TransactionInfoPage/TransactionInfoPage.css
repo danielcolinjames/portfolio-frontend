@@ -14,6 +14,7 @@
     margin-top: 160px;
     /* background-color: red; */
     box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.16);
+    overflow: scroll;
 }
 
 #navigationControlsContainer {
@@ -34,7 +35,29 @@
 }
 
 #transactionsHoldingsContainer {
+    margin-top: 37px;
+}
 
+#transactionsListHeaderContainer {
+    margin: 37px 28px 23px 28px;
+}
+
+#transactionsListHeaderTitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#transactionsListHeaderBody {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #959595;
+    margin: 0;
+    padding: 0;
 }
 
 .summaryButton {

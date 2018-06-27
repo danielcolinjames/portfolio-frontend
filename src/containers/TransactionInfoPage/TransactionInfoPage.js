@@ -2,6 +2,7 @@ import React from 'react';
 import './TransactionInfoPage.css';
 import ChartTest from '../../components/ChartTest/ChartTest';
 import { Link } from 'react-router-dom';
+import TransactionsPageListItem from '../../components/TransactionsPageListItem/TransactionsPageListItem';
 
 // Images
 import refreshIcon from '../../images/ui-icons/icon-refresh.svg';
@@ -26,9 +27,18 @@ const TransactionInfoPage = (props) => {
                 </div>
 
                 <div id='transactionsHoldingsContainer'>
+                    <div id='transactionsListHeaderContainer'>
+                        <p id='transactionsListHeaderTitle'>
+                            All Transactions
+                    </p>
+                        <p id='transactionsListHeaderBody'>
+                            {props.holdings.length} holdings
+                    </p>
+                    </div>
                     {props.holdings.map((holding) => {
                         return (
-                            <div>{holding.name} {holding.symbol} {holding.balance}</div>
+                            <TransactionsPageListItem symbol={holding.symbol} name={holding.name} balance={holding.balance} />
+                            // TODO: also add props for the information shown when an entry is clicked
                         )
                     })}
                 </div>
