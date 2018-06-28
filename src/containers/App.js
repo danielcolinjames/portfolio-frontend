@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header/Header';
-import HoldingCard from './HoldingCard/HoldingCard';
-import HoldingsList from './HoldingsList/HoldingsList';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Header from '../components/Header/Header';
+import HoldingsListPage from './HoldingsListPage/HoldingsListPage';
+import TransactionInfoPage from './TransactionInfoPage/TransactionInfoPage';
 
 class App extends Component {
   state = {
@@ -18,25 +20,19 @@ class App extends Component {
     document.body.style.backgroundColor = '#eaeef1';
 
     return (
-      <div className="App">
-        <Header>
-          
-        </Header>
-        <HoldingsList>
-          {this.state.holdings.map((holding) => {
-              return <HoldingCard
-                symbol={holding.symbol}
-                name={holding.name}
-                data={holding.data}
-                balance={holding.balance}
-                value={holding.value}
-                valueChange={holding.valueChange}
-                profit={holding.profit}
-                price={holding.price}
-                />
-            })}
-        </HoldingsList>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header>
+
+          </Header>
+
+          <Switch>
+            <Route exact path="/" render={routeProps => <HoldingsListPage {...routeProps} holdings={this.state.holdings} />} />
+
+            <Route path="/transactions/" render={routeProps => <TransactionInfoPage {...routeProps} holdings={this.state.holdings} />} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
