@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../node_modules/react-vis/dist/style.css';
 import './TradingPlotChart.css';
+import ChartHoverCard from './ChartHoverCard';
 import {
     FlexibleXYPlot,
     XAxis,
@@ -25,23 +26,6 @@ const data = [
     {x: 8, y: 10000},
     {x: 9, y: 8755.40}
 ];
-
-const tipStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'grey',
-    margin: '20px',
-};
-
-const boxStyle = {
-    height: '204px',
-    width: '200px',
-    backgroundColor: '#fff',
-    borderRadius: '12px',
-    boxShadow: '0 1px 2px 0 rgba(0,0,0,0.12), 0 12px 24px 0 rgba(0,0,0,0.05)'
-};
   
 function buildValue(hoveredCell) {
     return {
@@ -136,13 +120,7 @@ class TradingPlotChart extends React.Component {
                     </MarkSeries>
 
                     {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
-                        <div style={tipStyle}>
-                            <div style={{
-                                    ...boxStyle,
-                                }}>
-                                {hoveredCell.y}
-                            </div>
-                        </div>
+                        <ChartHoverCard price={hoveredCell.y} />
                     </ Hint> : null}
                     
                     {/* Blue marker over current price */}
