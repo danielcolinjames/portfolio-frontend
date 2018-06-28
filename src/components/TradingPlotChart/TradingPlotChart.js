@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../node_modules/react-vis/dist/style.css';
-import './ChartTest.css';
+import './TradingPlotChart.css';
 import {
     FlexibleXYPlot,
     XAxis,
@@ -51,7 +51,7 @@ function buildValue(hoveredCell) {
     };
 }
 
-class ChartTest extends React.Component {
+class TradingPlotChart extends React.Component {
     state = {
         hoveredCell: false
     }
@@ -190,4 +190,4 @@ class ChartTest extends React.Component {
     }
 }
 
-export default ChartTest;
+export default TradingPlotChart;

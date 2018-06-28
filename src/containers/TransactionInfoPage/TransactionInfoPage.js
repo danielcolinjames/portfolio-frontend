@@ -1,6 +1,6 @@
 import React from 'react';
 import './TransactionInfoPage.css';
-import ChartTest from '../../components/ChartTest/ChartTest';
+import TradingPlotChart from '../../components/TradingPlotChart/TradingPlotChart';
 import { Link } from 'react-router-dom';
 import TransactionsPageListItem from '../../components/TransactionsPageListItem/TransactionsPageListItem';
 
@@ -46,9 +46,9 @@ const TransactionInfoPage = (props) => {
 
             <div id='chartAndTransactions'>
                 <div id='chartAndTransactionsOverlay'>
-                    <ChartTest id='chartTest'>
+                    <TradingPlotChart id='chartTest'>
 
-                    </ChartTest>
+                    </TradingPlotChart>
                 </div>
 
                 <div id='transactionInfoHeader'>
