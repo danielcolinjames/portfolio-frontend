@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import btc from '../../images/logos/bitcoin-logo.png';
+import btc from '../../images/logos/bitcoin-logo@3x.png';
 import './TransactionsPageListItem.css';
 
 const TransactionsPageListItem = (props) => {

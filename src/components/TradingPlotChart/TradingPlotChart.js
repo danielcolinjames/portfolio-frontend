@@ -1,6 +1,10 @@
 import React from 'react';
 import '../../../node_modules/react-vis/dist/style.css';
 import './TradingPlotChart.css';
+import ChartHoverCard from './ChartHoverCard';
+
+import buyIcon from '../../images/ui-icons/icon-buy@3x.png';
+
 import {
     FlexibleXYPlot,
     XAxis,
@@ -25,23 +29,6 @@ const data = [
     {x: 8, y: 10000},
     {x: 9, y: 8755.40}
 ];
-
-const tipStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'grey',
-    margin: '20px',
-};
-
-const boxStyle = {
-    height: '204px',
-    width: '200px',
-    backgroundColor: '#fff',
-    borderRadius: '12px',
-    boxShadow: '0 1px 2px 0 rgba(0,0,0,0.12), 0 12px 24px 0 rgba(0,0,0,0.05)'
-};
   
 function buildValue(hoveredCell) {
     return {
@@ -114,9 +101,16 @@ class TradingPlotChart extends React.Component {
                         fill="white"
                         size={12}
                         style={{
-                            
+                            cursor: 'pointer'
                         }}
-                        data={data.slice(7, 9)}>
+                        data={data.slice(7, 9)}
+                        onValueMouseOver={v => this.setState({
+                            // hoveredCell: v.x && v.y ? v : false
+                            hoveredCell: v.y ? v : false
+                        })}
+                        onValueMouseOut={v => this.setState({
+                            hoveredCell: false
+                        })}>
                     </MarkSeries>
                     
                     {/* Buys (green dots) */}
@@ -130,19 +124,24 @@ class TradingPlotChart extends React.Component {
                         }}
                         data={data.slice(0, 5)}
                         // onValueMouseOver={v=> console.log(v.y)}
-                        onValueMouseOver={v => this.setState({hoveredCell: v.x && v.y ? v : false})}
-                        onValueMouseOut={v => this.setState({hoveredCell: false})}>
-                        >
+                        onValueMouseOver={v => this.setState({
+                            // hoveredCell: v.x && v.y ? v : false
+                            hoveredCell: v.y ? v : false
+                        })}
+                        onValueMouseOut={v => this.setState({
+                            hoveredCell: false
+                        })}>
                     </MarkSeries>
 
-                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
-                        <div style={tipStyle}>
-                            <div style={{
-                                    ...boxStyle,
-                                }}>
-                                {hoveredCell.y}
-                            </div>
-                        </div>
+                    {hoveredCell ? <Hint
+                        animation={{damping: 20, stiffness: 300}}
+                        value={buildValue(hoveredCell)}>
+                        <ChartHoverCard
+                            price={hoveredCell.y}
+                            amount={0.5}
+                            valueChange={10.5}
+                            time="14:05"
+                            date="May 17, 2018"/>
                     </ Hint> : null}
                     
                     {/* Blue marker over current price */}
