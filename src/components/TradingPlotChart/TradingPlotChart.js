@@ -119,8 +119,15 @@ class TradingPlotChart extends React.Component {
                         >
                     </MarkSeries>
 
-                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
-                        <ChartHoverCard price={hoveredCell.y} />
+                    {hoveredCell ? <Hint
+                        animation={{damping: 20, stiffness: 300}}
+                        value={buildValue(hoveredCell)}>
+                        <ChartHoverCard
+                            price={hoveredCell.y}
+                            amount={0.5}
+                            valueChange={10.5}
+                            time="14:05"
+                            date="May 17, 2018"/>
                     </ Hint> : null}
                     
                     {/* Blue marker over current price */}
