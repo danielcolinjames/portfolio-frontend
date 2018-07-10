@@ -67,7 +67,7 @@ h4{
   color: white;
 }
 #landing_area{
-  position: absolute;
+  position: fixed;
   z-index: 100;
   bottom: 0;
   width: 100%;
@@ -138,4 +138,19 @@ h4{
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+#menu_bar{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+#signup_banner{
+  width: 100%;
+  height: 200px;
+
+  background-image: linear-gradient(167deg, #8e80f3, #6da5e6);
+}
+.sheet_content{
+  width: 720px;
+  margin: 0 auto;
 }
