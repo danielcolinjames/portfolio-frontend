@@ -114,9 +114,13 @@ class TradingPlotChart extends React.Component {
                         }}
                         data={data.slice(0, 5)}
                         // onValueMouseOver={v=> console.log(v.y)}
-                        onValueMouseOver={v => this.setState({hoveredCell: v.x && v.y ? v : false})}
-                        onValueMouseOut={v => this.setState({hoveredCell: false})}>
-                        >
+                        onValueMouseOver={v => this.setState({
+                            // hoveredCell: v.x && v.y ? v : false
+                            hoveredCell: v.y ? v : false
+                        })}
+                        onValueMouseOut={v => this.setState({
+                            hoveredCell: false
+                        })}>
                     </MarkSeries>
 
                     {hoveredCell ? <Hint
