@@ -1,0 +1,141 @@
+html{
+    font-size:100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: sans-serif, system;
+    height:100%;
+    -webkit-backface-visibility: hidden;
+}
+a{
+  transition-property: all;
+  transition-duration: .7s;
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  transition-property: all;
+  transition-duration: .3s;
+  transform: translate(0,-2px);
+}
+a:visited{
+    color: black;
+}
+::selection{
+}
+@font-face {
+    font-family: "Roboto Bold";
+    src:url("../src/Roboto-Bold.ttf");
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url("../src/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("../src/Roboto-Regular.ttf");
+}
+img{
+    border: none;
+    vertical-align: bottom;
+    display:block;
+    padding:0;
+    margin:0;
+}
+body{
+    font-weight: normal;
+    margin:0;
+    padding: 0;
+    background-color: white;
+}
+h1{
+  font-size: 36px;
+  font-family: "Roboto Bold";
+  font-weight: normal;
+  color: #4a4a4a;
+  margin: 0;
+}
+h4{
+  font-size: 16px;
+  font-family: "Roboto Bold";
+  font-weight: normal;
+  color: #4a4a4a;
+  margin: 0;
+}
+.text_light{
+  font-family: "Roboto Light"
+}
+.white{
+  color: white;
+}
+#landing_area{
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  /* height: 200px; */
+  background-image: linear-gradient(167deg, #8e80f3, #6da5e6);
+}
+#landing_container{
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 60px 48px 60px 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#landing_button_area{
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#landing_con_r{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#landing_con_r_l{
+  border-right: 1px solid rgba(255, 255, 255, 0.36);
+  padding-right: 20px;
+}
+#landing_con_r_r{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 40px;
+  justify-content: center;
+  text-align: center;
+}
+.landing_button{
+  transition-property: all;
+  transition-duration: .7s;
+  margin-right: 20px;
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
+  width: 148px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+  text-align: center;
+  font-size: 16px;
+  font-family: "Roboto Bold";
+  font-weight: normal;
+  color: #4a4a4a;
+  line-height: 44px;
+}
+.landing_button:hover{
+  transition-property: all;
+  transition-duration: .3s;
+  cursor: pointer;
+  transform: translate(0,-2px);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+}
+.logo_coinbase{
+  margin: 0 auto;
+  width: 80px;
+  height: 44px;
+  background-image: url("../src/logo_coinbase.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
