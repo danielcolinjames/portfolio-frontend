@@ -98,9 +98,16 @@ class TradingPlotChart extends React.Component {
                         fill="white"
                         size={12}
                         style={{
-                            
+                            cursor: 'pointer'
                         }}
-                        data={data.slice(7, 9)}>
+                        data={data.slice(7, 9)}
+                        onValueMouseOver={v => this.setState({
+                            // hoveredCell: v.x && v.y ? v : false
+                            hoveredCell: v.y ? v : false
+                        })}
+                        onValueMouseOut={v => this.setState({
+                            hoveredCell: false
+                        })}>
                     </MarkSeries>
                     
                     {/* Buys (green dots) */}
