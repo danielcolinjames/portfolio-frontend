@@ -2,6 +2,9 @@ import React from 'react';
 import '../../../node_modules/react-vis/dist/style.css';
 import './TradingPlotChart.css';
 import ChartHoverCard from './ChartHoverCard';
+
+import buyIcon from '../../images/ui-icons/icon-buy@3x.png';
+
 import {
     FlexibleXYPlot,
     XAxis,
