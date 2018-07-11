@@ -46,8 +46,8 @@ class TradingPlotChart extends React.Component {
 
     render() {
 
-        const {hoveredCell} = this.state;
-        
+        const { hoveredCell } = this.state;
+
         return (
             <div id='chartTest'>
                 <FlexibleXYPlot
@@ -57,11 +57,12 @@ class TradingPlotChart extends React.Component {
                         top: 50,
                         right: 100,
                         left: 0,
-                        bottom: 50}}>
-                    
+                        bottom: 50
+                    }}>
+
                     <GradientDefs>
                         <linearGradient id="CoolGradient" x1="0" x2="0" y1="0" y2="1">
-                            <stop offset="0%" stopColor="#F7931A" stopOpacity={0.2}/>
+                            <stop offset="0%" stopColor="#F7931A" stopOpacity={0.2} />
                             <stop offset="100%" stopColor="#F7931A" stopOpacity={0.0} />
                         </linearGradient>
                     </GradientDefs>
@@ -84,10 +85,8 @@ class TradingPlotChart extends React.Component {
 
                     <LineSeries
                         stroke="#F7931A"
-                        data={data}
-                        >
-                    </LineSeries>
-                    
+                        data={data} />
+
                     <AreaSeries
                         stroke="none"
                         color={'url(#CoolGradient)'}
@@ -151,39 +150,38 @@ class TradingPlotChart extends React.Component {
                         align={{
                             horizontal: 'right',
                             vertical: 'top'
-                        }}
-                        >
+                        }} >
                         <div style={{
-                                background: '#4A90E2',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
+                            background: '#4A90E2',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
 
-                                fontFamily: 'SFUIDisplay-Bold, sans-serif',
-                                fontSize: '12px',
-                                color: 'white',
-                                text: {
-                                    display: 'none'
-                                },
-                                value: {
-                                    color: 'red'
-                                },
-                                borderRadius: 4,
-                                padding: 0,
-                                marginBottom: -10, // because there is no "centered" option in align.vertical
-                                // marginRight: 64,
-                                height: 20,
-                                width: 64,
-                            }}>
-                            <p 
+                            fontFamily: 'SFUIDisplay-Bold, sans-serif',
+                            fontSize: '12px',
+                            color: 'white',
+                            text: {
+                                display: 'none'
+                            },
+                            value: {
+                                color: 'red'
+                            },
+                            borderRadius: 4,
+                            padding: 0,
+                            marginBottom: -10, // because there is no "centered" option in align.vertical
+                            // marginRight: 64,
+                            height: 20,
+                            width: 64,
+                        }}>
+                            <p
                                 style={{
                                     padding: 0,
                                     margin: 0
                                 }}
-                                >{data[data.length - 1].y}</p>
+                            >{data[data.length - 1].y}</p>
                         </div>
-                    </Hint>                    
+                    </Hint>
                 </FlexibleXYPlot>
             </div>
         )
