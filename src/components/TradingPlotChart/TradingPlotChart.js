@@ -15,7 +15,8 @@ import {
     MarkSeries,
     VerticalGridLines,
     GradientDefs,
-    AreaSeries
+    AreaSeries,
+    CustomSVGSeries
 } from 'react-vis';
 
 const data = [
