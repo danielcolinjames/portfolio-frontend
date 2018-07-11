@@ -3,7 +3,8 @@ import '../../../node_modules/react-vis/dist/style.css';
 import './TradingPlotChart.css';
 import ChartHoverCard from './ChartHoverCard';
 
-import buyIcon from '../../images/ui-icons/icon-buy@3x.png';
+import BuyIcon from './BuyIcon';
+import SellIcon from './SellIcon';
 
 import {
     FlexibleXYPlot,
