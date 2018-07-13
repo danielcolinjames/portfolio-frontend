@@ -3,6 +3,7 @@ import './TransactionInfoPage.css';
 import TradingPlotChart from '../../components/TradingPlotChart/TradingPlotChart';
 import { Link } from 'react-router-dom';
 import TransactionsPageListItem from '../../components/TransactionsPageListItem/TransactionsPageListItem';
+import TransactionsPageHistoryListItem from '../../components/TransactionsPageHistoryListItem/TransactionsPageHistoryListItem';
 
 // Images
 import refreshIcon from '../../images/ui-icons/icon-refresh.svg';
@@ -51,15 +52,26 @@ const TransactionInfoPage = (props) => {
                     </TradingPlotChart>
                 </div>
 
-                <div id='transactionInfoHeader'>
-
-                </div>
-
-                {props.holdings.map((holding) => {
-                    return (
-                        <div>{holding.symbol}</div>
-                    )
-                })}
+                <table id='transactionHistoryTable'>
+                    <tbody>
+                        <tr id='transactionHistoryTableHeaderRow'>
+                            <th id='transactionHistoryTableFirstColumnHeader'></th>
+                            <th id='transactionHistoryTableDateHeader'>Date</th>
+                            <th id='transactionHistoryTableSourceHeader'>Source</th>
+                        </tr>
+                        {props.trades.map((trade, i) => {
+                            return (
+                                <TransactionsPageHistoryListItem
+                                    symbol={trade.symbol}
+                                    date={trade.close_date}
+                                    source={trade.exchange_account.exchange}
+                                    amount={trade.amount}
+                                    price={trade.cost}
+                                    side={trade.side} />
+                            )
+                        })}
+                    </tbody>
+                </table>
             </div>
         </div>
     )
