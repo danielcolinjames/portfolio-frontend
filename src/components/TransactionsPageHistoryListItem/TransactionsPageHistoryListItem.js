@@ -18,28 +18,26 @@ const transactionsPageHistoryListItem = (props) => {
                 {/* Sell icon */}
                 <img src={SellIcon} className='transactionHistoryItemLogo' />
                 {/* Transaction info (sell icon, logo, amount -> $amount */}
-                <div className='transactionHistoryItemInfoWrapper'>
-                    <div className='transactionHistoryItemInfoContent'>
-                        {/* [BTC] 0.5 */}
-                        <div className='transactionHistoryItemInfoFrom'>
-                            <img className='transactionHistoryItemInfoFromLogo' src={btc} />
-                            <p className='transactionHistoryItemInfoFromName'>
-                                {props.amount}
-                            </p>
-                        </div>
+                <div className='transactionHistoryItemInfoContent'>
+                    {/* [BTC] 0.5 */}
+                    <div className='transactionHistoryItemInfoFrom'>
+                        <img className='transactionHistoryItemInfoFromLogo' src={btc} />
+                        <p className='transactionHistoryItemInfoFromName'>
+                            {props.amount}
+                        </p>
+                    </div>
 
-                        {/* -> */}
-                        <div className='transactionHistoryItemInfoArrow'>
-                            <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
-                        </div>
+                    {/* -> */}
+                    <div className='transactionHistoryItemInfoArrow'>
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
+                    </div>
 
-                        {/* USD $3,300 */}
-                        <div className='transactionHistoryItemInfoTo'>
-                            <p className='transactionHistoryItemInfoToAmount'>
-                                <span className='dollars'>${(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                                <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
-                            </p>
-                        </div>
+                    {/* USD $3,300 */}
+                    <div className='transactionHistoryItemInfoTo'>
+                        <p className='transactionHistoryItemInfoToAmount'>
+                            <span className='dollars'>${(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                            <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -50,28 +48,26 @@ const transactionsPageHistoryListItem = (props) => {
                 {/* Buy icon */}
                 <img src={BuyIcon} className='transactionHistoryItemLogo' />
                 {/* Transaction info (buy icon, $amount -> logo, amount */}
-                <div className='transactionHistoryItemInfoWrapper'>
-                    <div className='transactionHistoryItemInfoContent'>
-                        {/* USD $3,300 */}
-                        <div className='transactionHistoryItemInfoTo'>
-                            <p className='transactionHistoryItemInfoToAmount'>
-                                <span className='dollars'>${(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                                <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
-                            </p>
-                        </div>
+                <div className='transactionHistoryItemInfoContent'>
+                    {/* USD $3,300 */}
+                    <div className='transactionHistoryItemInfoTo'>
+                        <p className='transactionHistoryItemInfoToAmount'>
+                            <span className='dollars'>${(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                            <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
+                        </p>
+                    </div>
 
-                        {/* -> */}
-                        <div className='transactionHistoryItemInfoArrow'>
-                            <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
-                        </div>
+                    {/* -> */}
+                    <div className='transactionHistoryItemInfoArrow'>
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
+                    </div>
 
-                        {/* [BTC] 0.5 */}
-                        <div className='transactionHistoryItemInfoFrom'>
-                            <img className='transactionHistoryItemInfoFromLogo' src={btc} />
-                            <p className='transactionHistoryItemInfoFromName'>
-                                {props.amount}
-                            </p>
-                        </div>
+                    {/* [BTC] 0.5 */}
+                    <div className='transactionHistoryItemInfoFrom'>
+                        <img className='transactionHistoryItemInfoFromLogo' src={btc} />
+                        <p className='transactionHistoryItemInfoFromName'>
+                            {props.amount}
+                        </p>
                     </div>
                 </div>
             </div>
