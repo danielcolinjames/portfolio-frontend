@@ -15,21 +15,11 @@
 .percentChangeTriangleUp {
     width: 18px;
     height: 18px;
-    /* border-radius: 1px;
-    border-left: 4.3px solid transparent;
-    border-right: 4.3px solid transparent;
-    border-bottom: 7.9px solid rgba(126, 211, 33, 0.51);
-    margin-right: 5px; */
 }
 
 .percentChangeTriangleDown {
     width: 18px; 
     height: 18px;
-    /* border-radius: 1px;
-    border-left: 4.3px solid transparent;
-    border-right: 4.3px solid transparent;
-    border-top: 7.9px solid rgba(246, 107, 124, 0.51);
-    margin-right: 5px; */
 }
 
 .percentChangeValueUp {
