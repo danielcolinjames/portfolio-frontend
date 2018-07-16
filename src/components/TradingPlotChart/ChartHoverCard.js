@@ -1,5 +1,8 @@
 import React from 'react';
 import './ChartHoverCard.css';
+
+import PercentageChangeIndicator from '../PercentageChangeIndicator/PercentageChangeIndicator';
+
 import btc from '../../images/logos/bitcoin-logo@3x.png';
 import convertArrow from '../../images/ui-icons/icon-arrow-large@3x.png';
 
@@ -48,22 +51,7 @@ const ChartHoverCard = (props) => {
                                 <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                                 <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
                             </p>
-                            {/* TODO: replace the following with a PercentChange component (and also in HoldingCard.js) */}
-                            {(props.valueChange > 0) ? (
-                                <div className='holdingValueChangeContainer'>
-                                    <div className='holdingValueChangeTriangleUp'></div>
-                                    <p className='holdingValueChangeValueUp'>{Math.abs(props.valueChange)}
-                                        <span className='percentUp'>%</span>
-                                    </p>
-                                </div>
-                            ) : (
-                                <div className='holdingValueChangeContainer'>
-                                    <div className='holdingValueChangeTriangleDown'></div>
-                                    <p className='holdingValueChangeValueDown'>{Math.abs(props.valueChange)}
-                                        <span className='percentDown'>%</span>
-                                    </p>
-                                </div>
-                            )}
+                            <PercentageChangeIndicator valueChange={props.valueChange} />
                         </div>
                     </div>
                 </div>
@@ -78,22 +66,7 @@ const ChartHoverCard = (props) => {
                                 <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                                 <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
                             </p>
-                            {/* TODO: replace the following with a PercentChange component (and also in HoldingCard.js) */}
-                            {(props.valueChange > 0) ? (
-                                <div className='holdingValueChangeContainer'>
-                                    <div className='holdingValueChangeTriangleUp'></div>
-                                    <p className='holdingValueChangeValueUp'>{Math.abs(props.valueChange)}
-                                        <span className='percentUp'>%</span>
-                                    </p>
-                                </div>
-                            ) : (
-                                <div className='holdingValueChangeContainer'>
-                                    <div className='holdingValueChangeTriangleDown'></div>
-                                    <p className='holdingValueChangeValueDown'>{Math.abs(props.valueChange)}
-                                        <span className='percentDown'>%</span>
-                                    </p>
-                                </div>
-                            )}
+                            <PercentageChangeIndicator valueChange={props.valueChange} />
                         </div>
                     </div>
                 </div>
