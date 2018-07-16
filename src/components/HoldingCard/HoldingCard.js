@@ -3,6 +3,8 @@ import './HoldingCard.css';
 import { Link } from 'react-router-dom';
 import { Sparklines, SparklinesCurve } from 'react-sparklines';
 
+import PercentageChangeIndicator from '../PercentageChangeIndicator/PercentageChangeIndicator';
+
 // TODO: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 import btc from '../../images/logos/bitcoin-logo@3x.png';
 
@@ -99,22 +101,7 @@ const HoldingCard = (props) => {
                                 <span className='dollars'>${props.value.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                                 <span className='cents'>.{Math.round(props.value * 100) % 100}</span>
                             </p>
-                            {(props.valueChange > 0) ? (
-                                <div className='holdingValueChangeContainer'>
-                                    <div className='holdingValueChangeTriangleUp'></div>
-                                    <p className='holdingValueChangeValueUp'>{Math.abs(props.valueChange)}
-                                        <span className='percentUp'>%</span>
-                                    </p>
-                                </div>
-                            ) : (
-                                    <div className='holdingValueChangeContainer'>
-                                        <div className='holdingValueChangeTriangleDown'></div>
-                                        <p className='holdingValueChangeValueDown'>{Math.abs(props.valueChange)}
-                                            <span className='percentDown'>%</span>
-                                        </p>
-                                    </div>
-
-                                )}
+                            <PercentageChangeIndicator valueChange={props.valueChange} />
                         </div>
                         {profitSection}
                     </div>

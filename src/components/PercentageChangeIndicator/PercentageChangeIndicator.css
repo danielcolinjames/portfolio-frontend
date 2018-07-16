@@ -1,0 +1,43 @@
+
+.percentChangeContainer {
+    margin-left: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.percentChangeTriangleUp {
+    width: 18px;
+    height: 18px;
+}
+
+.percentChangeTriangleDown {
+    width: 18px; 
+    height: 18px;
+}
+
+.percentChangeValueUp {
+    margin: 0;
+    color: #7ed321;
+}
+
+.percentChangeValueDown {
+    margin: 0;
+    color: #f66b7c;
+}
+
+.percentChangePercentUp {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+}
+
+.percentChangePercentDown {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+}
