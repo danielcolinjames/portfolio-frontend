@@ -22,7 +22,7 @@ export default class LoginForm extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <h1>Authentication</h1>
+          <h1>Log in</h1>
           {
             errors.non_field_errors?
               <p>
