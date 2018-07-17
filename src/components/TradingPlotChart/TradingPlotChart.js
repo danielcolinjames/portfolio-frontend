@@ -189,6 +189,18 @@ class TradingPlotChart extends React.Component {
                             >{data[data.length - 1].y}</p>
                         </div>
                     </Hint>
+                    <Hint
+                        style={{
+                            width: 'calc(100% - 100px)',
+                            // ^ this stupid line took me an hour to figure out
+                            height: "1px",
+                            backgroundColor: "#65a8f5"
+                        }}
+                        value={data[data.length - 1]} >
+                        {/* if there's a div it doesn't use the default Hint styling component */}
+                        <div></div>
+                    </Hint>
+
                     {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
                         <ChartHoverCard
                             // All dummy values for testing
