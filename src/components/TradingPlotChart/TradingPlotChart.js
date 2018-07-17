@@ -149,16 +149,6 @@ class TradingPlotChart extends React.Component {
                             hoveredCell: false
                         })} />
 
-                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
-                        <ChartHoverCard
-                            // All dummy values for testing
-                            price={hoveredCell.y}
-                            amount={hoveredCell.x}
-                            valueChange={(hoveredCell.y - 10000) / 100}
-                            time="14:05"
-                            date="May 17, 2018" />
-                    </ Hint> : null}
-
                     {/* ------------------------------ */}
                     {/* Blue marker over current price */}
                     {/* ------------------------------ */}
@@ -199,6 +189,15 @@ class TradingPlotChart extends React.Component {
                             >{data[data.length - 1].y}</p>
                         </div>
                     </Hint>
+                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
+                        <ChartHoverCard
+                            // All dummy values for testing
+                            price={hoveredCell.y}
+                            amount={hoveredCell.x}
+                            valueChange={(hoveredCell.y - 10000) / 100}
+                            time="14:05"
+                            date="May 17, 2018" />
+                    </ Hint> : null}
                 </FlexibleXYPlot>
             </div>
         )
