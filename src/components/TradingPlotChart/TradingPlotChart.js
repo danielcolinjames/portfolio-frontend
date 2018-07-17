@@ -53,6 +53,7 @@ class TradingPlotChart extends React.Component {
             <div id='chartTest'>
                 <FlexibleXYPlot
                     height={466}
+                    yPadding={50}
 
                     margin={{
                         top: 50,
@@ -148,16 +149,6 @@ class TradingPlotChart extends React.Component {
                             hoveredCell: false
                         })} />
 
-                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
-                        <ChartHoverCard
-                            // All dummy values for testing
-                            price={hoveredCell.y}
-                            amount={hoveredCell.x}
-                            valueChange={(hoveredCell.y - 10000) / 100}
-                            time="14:05"
-                            date="May 17, 2018" />
-                    </ Hint> : null}
-
                     {/* ------------------------------ */}
                     {/* Blue marker over current price */}
                     {/* ------------------------------ */}
@@ -198,6 +189,27 @@ class TradingPlotChart extends React.Component {
                             >{data[data.length - 1].y}</p>
                         </div>
                     </Hint>
+                    <Hint
+                        style={{
+                            width: 'calc(100% - 100px)',
+                            // ^ this stupid line took me an hour to figure out
+                            height: "1px",
+                            backgroundColor: "#65a8f5"
+                        }}
+                        value={data[data.length - 1]} >
+                        {/* if there's a div it doesn't use the default Hint styling component */}
+                        <div></div>
+                    </Hint>
+
+                    {hoveredCell ? <Hint value={buildValue(hoveredCell)}>
+                        <ChartHoverCard
+                            // All dummy values for testing
+                            price={hoveredCell.y}
+                            amount={hoveredCell.x}
+                            valueChange={(hoveredCell.y - 10000) / 100}
+                            time="14:05"
+                            date="May 17, 2018" />
+                    </ Hint> : null}
                 </FlexibleXYPlot>
             </div>
         )
