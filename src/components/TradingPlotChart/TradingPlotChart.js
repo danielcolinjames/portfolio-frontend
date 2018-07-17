@@ -53,6 +53,7 @@ class TradingPlotChart extends React.Component {
             <div id='chartTest'>
                 <FlexibleXYPlot
                     height={466}
+                    yPadding={50}
 
                     margin={{
                         top: 50,
