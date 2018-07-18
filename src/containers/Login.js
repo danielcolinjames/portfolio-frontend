@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
-import LoginForm from '../components/LoginForm'
+import LoginForm from '../components/Authentication/LoginForm'
 import {login} from  '../actions/auth'
 import {authErrors, isAuthenticated} from '../reducers'
 
