@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import HoldingCard from '../components/Holdings/HoldingCard';
 import { getHoldings } from '../actions/holdings';
 
 class HoldingsContainer extends Component {
@@ -15,9 +16,7 @@ class HoldingsContainer extends Component {
         <h1>Holdings!</h1>
         <div id='holdingsListContainer'>
           { this.props.holdings.map( (holding) => (
-            <div key={holding.coin}>
-              Name: {holding.coin}
-            </div>  // TODO: HoldingCard
+            <HoldingCard holding={holding} />
           )) }
         </div>
       </div>
