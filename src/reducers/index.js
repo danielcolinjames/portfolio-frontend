@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import auth, * as fromAuth from './auth.js'
+import holdings from './holdings.js'
 
 export default combineReducers({
-  auth: auth,
+  auth,
+  holdings
 });
 
 export const isAuthenticated =
