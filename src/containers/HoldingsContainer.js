@@ -16,7 +16,7 @@ class HoldingsContainer extends Component {
         <h1>Holdings!</h1>
         <div id='holdingsListContainer'>
           { this.props.holdings.map( (holding) => (
-            <HoldingCard holding={holding} />
+            <HoldingCard key={holding.coin} holding={holding} />
           )) }
         </div>
       </div>
