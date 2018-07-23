@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import auth, * as fromAuth from './auth.js'
 import holdings from './holdings.js'
+import totals from './totals.js'
 import graphs from './priceGraphs.js'
 
 export default combineReducers({
   auth,
   holdings,
+  totals,
   graphs
 });
 

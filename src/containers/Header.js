@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { getTotalHoldings } from '../actions/totals';
+
 import FullHeader from '../components/Header/FullHeader'
 import '../components/Header/Header.css'
 
 
-export default class MyComponent extends Component {
-  constructor(props) {
-    super(props);
+class HeaderContainer extends Component {
+  componentWillMount () {
+    this.props.getTotalHoldings();
   }
 
   render() {
     return (
       <header>
-        <FullHeader />
+        <FullHeader totals={this.props.totals} />
       </header>
     );
   }
 }
+
+const mapStateToProps = ({ totals }) => ({ totals });
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getTotalHoldings,
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

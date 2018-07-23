@@ -2,8 +2,14 @@ import React from 'react';
 
 import './FullHeader.css';
 
-export default (props) => (
+export default ({ totals }) => (
   <div className="header full">
-    <h1>HEADER!</h1>
+    <dl>
+      <dt>Total Balance in BTC</dt>
+      <dd>{totals.balance_in_btc}</dd>
+
+      <dt>Total Balance in USD</dt>
+      <dd>{totals.balance_in_usd}</dd>
+    </dl>
   </div>
 )
