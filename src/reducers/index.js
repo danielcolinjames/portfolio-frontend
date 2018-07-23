@@ -3,12 +3,14 @@ import auth, * as fromAuth from './auth.js'
 import holdings from './holdings.js'
 import totals from './totals.js'
 import graphs from './priceGraphs.js'
+import trades from './trades.js'
 
 export default combineReducers({
   auth,
   holdings,
   totals,
-  graphs
+  graphs,
+  trades
 });
 
 export const isAuthenticated =
