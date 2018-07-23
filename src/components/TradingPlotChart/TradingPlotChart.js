@@ -50,7 +50,7 @@ class TradingPlotChart extends React.Component {
         const { hoveredCell } = this.state;
 
         return (
-            <div id='chartTest'>
+            <div id="chart">
                 <FlexibleXYPlot
                     height={466}
                     yPadding={50}
