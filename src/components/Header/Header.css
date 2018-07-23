@@ -1,6 +1,5 @@
 .header {
-    /* TODO: Make header fixed. Rename to navbar? */
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     overflow: hidden;
     top: 0;

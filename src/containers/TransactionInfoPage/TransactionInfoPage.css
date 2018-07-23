@@ -12,9 +12,9 @@
     left: 0;
     background-color: #eaeef1;
     margin-top: 160px;
-    /* background-color: red; */
     box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.16);
     overflow: scroll;
+    z-index: 2;
 }
 
 #navigationControlsContainer {
@@ -112,15 +112,23 @@
     color: #4a4a4a;
 }
 
-#chartAndTransactionsOverlay {
-    /* TODO: figure out how to get this to draw over top of the chart. I think it's not working right now because of the way SVG renders. */
+#chartOverlay {
+    /* TODO: find a way to do this within the FlexibleXYPlot instead of this z-index & absolute positioning hackery */
 
-    /* background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff); */
-
-    /* z-index: 2; */
+    /* TODO: find a way to make the buy / sell dots underneath this gradient interactable */
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 466px;
+    width: 80px;
+    margin-left: 320px;
+    margin-top: 160px;
+    z-index: 1;
 }
 
-#chartTest {
+/* this id is given to the wrapping div of the TradingPlotChart when it's generated */
+#chart {
     background-color: #fff;
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.16);
 }

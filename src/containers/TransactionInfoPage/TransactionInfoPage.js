@@ -46,11 +46,8 @@ const TransactionInfoPage = (props) => {
             </div>
 
             <div id='chartAndTransactions'>
-                <div id='chartAndTransactionsOverlay'>
-                    <TradingPlotChart id='chartTest'>
-
-                    </TradingPlotChart>
-                </div>
+                <div id='chartOverlay' />
+                <TradingPlotChart />
 
                 <table id='transactionHistoryTable'>
                     <tbody>
