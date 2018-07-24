@@ -59,6 +59,7 @@ h4{
   font-weight: normal;
   color: #4a4a4a;
   margin: 0;
+  line-height: 32px;
 }
 .text_light{
   font-family: "Roboto Light"
@@ -143,6 +144,19 @@ h4{
   position: fixed;
   z-index: 100;
   top: 0;
+  width: calc(100% - 28px - 28px);
+  padding: 30px 28px 0 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#logo{
+  width: 28px;
+  height: 24px;
+  background-image: url("../src/temp_logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #signup_banner{
   width: 100%;
@@ -150,7 +164,120 @@ h4{
 
   background-image: linear-gradient(167deg, #8e80f3, #6da5e6);
 }
+#user_portal{
+  font-family: "Roboto Regular";
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+}
+.title_content{
+  width: 720px;
+  margin: 0 auto;
+  padding-top: 128px;
+}
 .sheet_content{
   width: 720px;
   margin: 0 auto;
+  padding-top: 36px;
+}
+.row_flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main_sheet{
+}
+.side_sheet{
+  border-left: 1px solid #dddddd;
+  width: calc(258px - 26px);
+  padding-left: 26px;
+}
+.textfield_area{
+  margin-bottom: 36px;
+}
+.textfield{
+  transition-property: all;
+  transition-duration: .3s;
+  width: 340px;
+  height: 40px;
+  padding: 0 16px 0 16px;
+  margin: 0 0 4px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  font-family: "Roboto Bold";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: black;
+}
+.textfield:focus{
+  transition-property: all;
+  transition-duration: .3s;
+  border: solid 1px #4A90E2;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+.textfield:hover{
+  transition-property: all;
+  transition-duration: .3s;
+  border: solid 1px #4A90E2;
+}
+.sheet_button{
+  transition-property: all;
+  transition-duration: .7s;
+  width: 160px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Roboto Bold";
+  font-weight: normal;
+  color: #4a4a4a;
+  line-height: 44px;
+}
+.sheet_button:hover{
+  transition-property: all;
+  transition-duration: .3s;
+  cursor: pointer;
+  transform: translate(0,-2px);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+}
+.sheet_button.disabled{
+  pointer-events: none;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  color: #9b9b9b;
+}
+.section_title{
+  margin-bottom: 10px;
+}
+.policy_check_area{
+  font-family: "Roboto Regular";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #838383;
+  margin-bottom: 36px;
+}
+.text_link{
+  color: #4a90e2;
+}
+.text_link:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }

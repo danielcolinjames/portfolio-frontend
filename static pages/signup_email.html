@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Landing</title>
+  <title>Sign up</title>
   <link rel="stylesheet" type="text/css" href="css/evan_style.css" >
   <script src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -10,11 +10,35 @@
 <body>
   <div id="menu_bar">
     <div id="logo"></div>
-    <div id="user">Sign in</div>
+    <div id="user_portal">Sign in</div>
   </div>
   <div id="signup_banner">
-    <div class="sheet_content">
-      <h1 class="white">Sign up</div>
+    <div class="title_content">
+      <h1 class="white">Sign up</h1>
+    </div>
+  </div>
+
+  <div class="sheet_content">
+    <div class="row_flex">
+      <div class="main_sheet">
+        <div class="textfield_area">
+          <h4>Email</h4>
+          <input type="text" name="email" autofocus placeholder="name@example.com" class="textfield">
+        </div>
+        <div class="textfield_area">
+          <h4>Password</h4>
+          <input type="password" name="email" class="textfield">
+        </div>
+
+        <div class="policy_check_area"><input class="sheet_checkbox" type="checkbox" name="policy_check" value="1"> I agree to the <span class="text_link">User Agreement</span> and <span class="text_link">Privacy Policy</span></div>
+
+        <div class="sheet_button  disabled">Sign up</div>
+      </div>
+
+      <div class="side_sheet">
+        <h4 class="section_title">Or connect with</h4>
+        <div class="sheet_button"><div class="logo_coinbase"></div></div>
+      </div>
     </div>
   </div>
 </body>
