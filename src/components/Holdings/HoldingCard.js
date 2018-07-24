@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default ({ holding }) => (
   <div>
     <dl>
       <dt>Coin</dt>
-      <dd>{holding.coin}</dd>
+      <dd><Link to={`/transactions/${holding.coin}/`}>{holding.coin}</Link></dd>
 
       <dt>Balance in BTC</dt>
       <dd>{holding.balance}</dd>
