@@ -7,7 +7,7 @@ import { getPriceGraph } from '../actions/priceGraphs';
 
 
 class PriceGraphContainer extends Component {
-  componentDidUpdate () {
+  componentWillMount () {
     let marketUUID = this.props.match.params.marketUUID;
     this.props.getPriceGraph(marketUUID);
   }

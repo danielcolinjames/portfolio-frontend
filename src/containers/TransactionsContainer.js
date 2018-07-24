@@ -9,15 +9,17 @@ import TransactionList from '../components/Transactions/TransactionList';
 import PriceGraphContainer from './PriceGraphContainer';
 
 class TransactionsContainer extends Component {
-  getData () {
+  fetchData () {
     let coin = this.props.match.params.coin;
     this.props.getTradesForCoin(coin);
   }
   componentWillMount () {
-    this.getData()
+    this.fetchData()
   }
-  componentDidUpdate () {
-    this.getData()
+  componentDidUpdate (prevProps) {
+    if (this.props.match.params.coin !== prevProps.match.params.coin) {
+      this.fetchData()
+    }
   }
 
   render () {
