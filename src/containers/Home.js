@@ -9,7 +9,6 @@ import { getTotalHoldings } from '../actions/totals';
 import Header from './Header';
 import HoldingsContainer from './HoldingsContainer';
 import TransactionsContainer from './TransactionsContainer';
-import logo from '../logo.svg';
 
 
 class Home extends Component {
