@@ -2,7 +2,7 @@
   "name": "portfolio-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://poopfolio-backend.herokuapp.com/",
   "dependencies": {
     "jwt-decode": "^2.2.0",
     "react": "^16.4.1",
