@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PercentageChangeIndicator from '../Global/PercentageChangeIndicator';
 import './HoldingCard.css';
 
-import btc from '../../assets/images/logos/bitcoin-logo@3x.png';
+import CryptoIcon from 'react-webfont-cryptocoins'
 
 
 export default ({ holding }) => {
@@ -89,9 +89,9 @@ export default ({ holding }) => {
         {/* Top section */}
         <div className='holdingCardTopBar'>
           <div className='holdingCurrencyInfoContainer'>
-                <img
-                  src={btc}
-                  className='holdingCurrencyLogo' />
+            <span className='holdingCurrencyLogo'>
+              <CryptoIcon coin={holding.coin} />
+            </span>
 
             <div className='holdingCurrencyInfo'>
               <div className='holdingCurrencySymbol'>{holding.coin}</div>

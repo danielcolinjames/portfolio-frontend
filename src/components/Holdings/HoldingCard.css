@@ -67,6 +67,8 @@
     height: 32px;
     width: 32px;
     margin: 8px 8px 8px 0;
+    font-size: 30px;
+    line-height: 30px;
 }
 
 .holdingCurrencyInfo {
