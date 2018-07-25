@@ -13,6 +13,7 @@ import TransactionsContainer from './TransactionsContainer';
 
 class Home extends Component {
   componentWillMount () {
+    document.body.style.backgroundColor = '#eaeef1';
     this.props.getHoldings();
     this.props.getTotalHoldings();
   }
@@ -21,12 +22,12 @@ class Home extends Component {
     return (
       <div className="App">
         <Header />
-        <div className="main-container">
+        {/* <div className="main-container"> */}
           <Switch>
             <Route path="/" exact component={HoldingsContainer} />
             <Route path="/transactions/:coin/" component={TransactionsContainer}/>
           </Switch>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

@@ -13,6 +13,7 @@ const Login = (props) => {
     )
   } else {
     return (
+      // TODO: return dummy page with fake data to play with, and the "make this yours" banner along the bottom, and in that banner have the Log in / Sign up buttons go to the login page
       <div className="login-page">
         <LoginForm {...props}/>
       </div>
