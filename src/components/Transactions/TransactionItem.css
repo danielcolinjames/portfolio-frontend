@@ -1,0 +1,103 @@
+/* ------------------------------------------------- */
+/* Transaction info (buy/sell icon, amount -> amount */
+/* ------------------------------------------------- */
+.transactionHistoryItemInfoContainer {
+    height: 44px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.transactionHistoryItemLogo {
+    height: 32px;
+    width: 32px;
+    margin: 0 40px 0 21px;
+}
+
+.transactionHistoryItemInfoContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactionHistoryItemInfoFrom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactionHistoryItemInfoFromLogo {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+}
+
+.transactionHistoryItemInfoFromName {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+.transactionHistoryItemInfoArrow {
+    height: 24px;
+    margin: 0 18px;
+}
+
+.transactionHistoryItemInfoArrowImg {
+    height: 24px;
+    width: 24px;
+}
+
+.transactionHistoryItemInfoTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactionHistoryItemInfoToAmount {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* ----------- */
+/* Date column */
+/* ----------- */
+.transactionHistoryItemDateColumnData {
+    font-family: "Roboto";
+    font-size: 14px;
+    color: #838383;
+}
+
+/* May 17, */
+.transactionHistoryItemDateColumnMonthDay {
+    font-weight: bold;
+}
+
+/* 2018 */
+.transactionHistoryItemDateColumnYear {
+    font-weight: normal;
+}
+
+/* ----------- */
+/* Source column */
+/* ----------- */
+/* Binance */
+.transactionHistoryItemSourceColumnData {
+    font-family: "Roboto";
+    font-size: 14px;
+    color: #838383;
+    font-weight: bold;
+}
