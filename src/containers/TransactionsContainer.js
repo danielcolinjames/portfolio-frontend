@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { getTradesForCoin } from '../actions/trades';
@@ -34,6 +34,7 @@ class TransactionsContainer extends Component {
 
   render() {
     let coin = this.props.match.params.coin;
+    let lastTrade = (this.props.trades && this.props.trades[coin]) ? this.props.trades[coin][0] : null;
     return (
       // <div className="transactions container">
       //   <div className="transactions sidebar">
@@ -86,7 +87,7 @@ class TransactionsContainer extends Component {
               return (
                 // <TransactionsPageListItem key={holding.coin} symbol={holding.symbol} name={holding.name} balance={holding.balance} />
                 // <li key={holding.coin} symbol={holding.symbol} name={holding.name} balance={holding.balance} />
-                <TransactionsPageListItem holding={holding} key={holding.coin}><Link to={`/transactions/${holding.coin}`}>{holding.coin}</Link> </TransactionsPageListItem>
+                  <TransactionsPageListItem holding={holding} key={holding.coin}><Link to={`/transactions/${holding.coin}`}>{holding.coin}</Link> </TransactionsPageListItem>
                 // TODO: also add props for the information shown when an entry is clicked
               )
             })}
@@ -103,21 +104,26 @@ class TransactionsContainer extends Component {
           </div>
 
           {/* {props.trades.map((trade, i) => {
-                return (
-                  <TransactionsPageHistoryListItem
-                    symbol={trade.symbol}
-                    date={trade.close_date}
-                    source={trade.exchange_account.exchange}
-                    amount={trade.amount}
-                    price={trade.cost}
-                    side={trade.side} />
-                )
-              })} */}
+            return (
+            <TransactionsPageHistoryListItem
+            symbol={trade.symbol}
+            date={trade.close_date}
+            source={trade.exchange_account.exchange}
+            amount={trade.amount}
+            price={trade.cost}
+            side={trade.side} />
+            )
+          })} */}
 
           {/* <div className="transactions list">
-                <h1>Transactions list!</h1> */}
-          {this.props.trades && this.props.trades[coin] &&
-            <TransactionList coin={coin} trades={this.props.trades[coin]} />
+          <h1>Transactions list!</h1> */}
+          {lastTrade &&
+            (
+              <div>
+                <Redirect to={`/transactions/${coin}/${lastTrade.market.uuid}/`}/>
+                <TransactionList coin={coin} trades={this.props.trades[coin]} />
+              </div>
+            )
           }
           {/* </div> */}
 
