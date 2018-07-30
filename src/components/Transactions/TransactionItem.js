@@ -13,7 +13,7 @@ import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
 import SellIcon from '../../assets/images/ui-icons/icon-sell@3x.png';
 import BuyIcon from '../../assets/images/ui-icons/icon-buy@3x.png';
 
-import CryptoIcon from 'react-webfont-cryptocoins';
+// import CryptoIcon from 'react-webfont-cryptocoins';
 
 export default ({ trade }) => {
 
@@ -24,12 +24,12 @@ export default ({ trade }) => {
         transactionHistoryItemFirstColumnContent = (
             <div className='transactionHistoryItemInfoContainer'>
                 {/* Sell icon */}
-                <img src={SellIcon} className='transactionHistoryItemLogo' />
+                <img src={SellIcon} className='transactionHistoryItemLogo' alt="" />
                 {/* Transaction info (sell icon, logo, amount -> $amount */}
                 <div className='transactionHistoryItemInfoContent'>
                     {/* [BTC] 0.5 */}
                     <div className='transactionHistoryItemInfoFrom'>
-                        <img className='transactionHistoryItemInfoFromLogo' src={btc} />
+                        <img className='transactionHistoryItemInfoFromLogo' src={btc} alt="" />
                         <p className='transactionHistoryItemInfoFromName'>
                             {trade.amount}
                         </p>
@@ -37,7 +37,7 @@ export default ({ trade }) => {
 
                     {/* -> */}
                     <div className='transactionHistoryItemInfoArrow'>
-                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
                     </div>
 
                     {/* USD $3,300 */}
@@ -54,7 +54,7 @@ export default ({ trade }) => {
         transactionHistoryItemFirstColumnContent = (
             <div className='transactionHistoryItemInfoContainer'>
                 {/* Buy icon */}
-                <img src={BuyIcon} className='transactionHistoryItemLogo' />
+                <img src={BuyIcon} className='transactionHistoryItemLogo' alt="" />
                 {/* Transaction info (buy icon, $amount -> logo, amount */}
                 <div className='transactionHistoryItemInfoContent'>
                     {/* USD $3,300 */}
@@ -67,12 +67,12 @@ export default ({ trade }) => {
 
                     {/* -> */}
                     <div className='transactionHistoryItemInfoArrow'>
-                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} />
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
                     </div>
 
                     {/* [BTC] 0.5 */}
                     <div className='transactionHistoryItemInfoFrom'>
-                        <img className='transactionHistoryItemInfoFromLogo' src={btc} />
+                        <img className='transactionHistoryItemInfoFromLogo' src={btc} alt="" />
                         <p className='transactionHistoryItemInfoFromName'>
                             {trade.amount}
                         </p>

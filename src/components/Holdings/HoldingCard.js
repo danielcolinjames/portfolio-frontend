@@ -57,15 +57,6 @@ export default ({ holding }) => {
     // TODO: priceSection gets populated with Value data
   }
 
-  const tryRequire = (path) => {
-    try {
-     return require(`${path}`);
-    } catch (err) {
-      console.log(err)
-     return null;
-    }
-  };
-
   // const logoPath = '../../node_modules/cryptocurrency-icons/dist/128/color/' + holding.coin.toLowerCase() + '.png';
   // const logo = tryRequire(logoPath) ? tryRequire(logoPath) : btc;
   

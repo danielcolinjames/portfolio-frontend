@@ -64,12 +64,12 @@ class TransactionsContainer extends Component {
             <div id='navigationControls'>
               <div className='summaryButton'>
                 <Link className='summaryButtonLink' to="/">
-                  <img src={leftArrow} />
+                  <img src={leftArrow} alt="" />
                   <p>Summary</p>
                 </Link>
               </div>
               <div className='refreshButton'>
-                <img src={refreshIcon} />
+                <img src={refreshIcon} alt="" />
               </div>
             </div>
           </div>

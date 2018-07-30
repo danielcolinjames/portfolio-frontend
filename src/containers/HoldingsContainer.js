@@ -30,7 +30,7 @@ class HoldingsContainer extends Component {
             <div className='allTransactionsButton'>
               <Link className='allTransactionsButtonLink' to="/transactions">
                 <p>All Transactions</p>
-                <img src={rightArrow} className='allTransactionsRightArrow' />
+                <img src={rightArrow} className='allTransactionsRightArrow' alt="" />
               </Link>
             </div>
           </div>
