@@ -1,3 +1,266 @@
 .header.full {
     height: 160px;
 }
+
+h5 {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: normal;
+    color: #959595;
+    line-height: 18px;
+    margin: 0;
+}
+
+.blue {
+    color: #4a90e2;
+}
+
+#glance_banner{
+    transition-property: all;
+    transition-duration: .3s;
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    width: calc(100% - 28px - 28px);
+    height: 160px;
+    padding: 0 28px 0 28px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    /* justify-content: space-between; */
+  }
+  #glance_banner_s{
+    transition-property: all;
+    transition-duration: .7s;
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    width: calc(100% - 28px - 28px);
+    height: 78px;
+    padding: 0 28px 0 28px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    /* justify-content: space-between; */
+  }
+  #glance_banner_s:hover{
+    transition-property: all;
+    transition-duration: .3s;
+    height: 160px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  }
+  #glance_flex_container{
+    width: calc(100% - 0px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  }
+  #glance_flex_container_s{
+    transition-property: all;
+    transition-duration: .7s;
+    width: calc(100% - 180px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  }
+  #glance_banner_s:hover #glance_flex_container_s{
+    transition-property: all;
+    transition-duration: .3s;
+    width: calc(100% - 0px);
+  }
+  .total_amt{
+    flex-grow: 1;
+    margin-top: 72px;
+  }
+  .total_amt_s{
+    transition-property: all;
+    transition-duration: .7s;
+    flex-grow: 1;
+    transform: scale(0.6) translate(0, -10px);
+  }
+  #glance_banner_s:hover .total_amt_s{
+    transition-property: all;
+    transition-duration: .3s;
+    margin-top: 72px;
+    transform: scale(1) translate(0, 0);
+  }
+  .delta_area{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .delta_area_s{
+    transition-property: all;
+    transition-duration: .7s;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: scale(0.8) translate(0, -72px);
+    /* opacity: 0;
+    pointer-events: none; */
+  }
+  #glance_banner_s:hover .delta_area_s{
+    transition-property: all;
+    transition-duration: .3s;
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .delta_cell{
+    width: 168px;
+    height: 64px;
+    margin-top: 72px;
+    background-color: #ffffff;
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.12);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .delta_cell_s{
+    transition-property: all;
+    transition-duration: .3s;
+    width: 168px;
+    height: 64px;
+    margin-top: 72px;
+    background-color: #ffffff;
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0);
+    text-align: center;
+  }
+  #glance_banner_s:hover .delta_cell_s{
+    transition-property: all;
+    transition-duration: .3s;
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.12);
+  }
+  .last_cell{
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .control_area{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 72px;
+  }
+  .control_area_s{
+    transition-property: all;
+    transition-duration: .7s;
+    opacity: 0;
+    pointer-events: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  #glance_banner_s:hover .control_area_s{
+    transition-property: all;
+    transition-duration: .3s;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 72px;
+  }
+  .metric_small{
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    vertical-align: text-top;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+  .money_b{
+    font-family: "Lato";
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+  }
+  .money_s{
+    font-family: "Lato";
+    font-weight: lighter;
+  }
+  .money_b_s{
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin: 4px 0 4px 0;
+  }
+  .plus_large{
+    color: #7ed321;
+    margin-right: 4px;
+  }
+  .minus_large{
+    color: #f66b7c;
+    margin-right: 4px;
+  }
+  
+  .square_button{
+    transition-property: all;
+    transition-duration: .7s;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: solid 1px #dddddd;
+    margin: 12px 0 12px 12px;
+  }
+  .square_button:hover{
+    transition-property: all;
+    transition-duration: .3s;
+    cursor: pointer;
+    transform: translate(0,-2px);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+  }
+  #button_glance_add{
+    width: 88px;
+  }
+  #button_portfolio_graph{
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon_chart{
+    width: 20px;
+    height: 20px;
+    /* background-image: url("../src/icon_chart.svg"); */
+    background-size: contain;
+  }
+  .square_button_main{
+    transition-property: all;
+    transition-duration: .7s;
+    margin: 12px 0px 12px 12px;
+    text-align: center;
+    line-height: 40px;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    height: 36px;
+    padding: 0 12px 0 12px;
+    border-radius: 8px;
+    background-color: #65a8f5;
+    box-shadow: 0 1px 2px 0 #418be1;
+  }
+  .square_button_main:hover{
+    transition-property: all;
+    transition-duration: .3s;
+    cursor: pointer;
+    transform: translate(0,-2px);
+    box-shadow: 0 2px 6px 0 rgba(65, 139, 225, 0.3);
+  }
+  
