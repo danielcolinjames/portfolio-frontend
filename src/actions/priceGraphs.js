@@ -14,7 +14,7 @@ export const getPriceGraph = (marketSlug) => ({
       GRAPHS_REQUEST,
       {
         type: GRAPHS_SUCCESS,
-        meta: { uuid: marketSlug }
+        meta: { slug: marketSlug }
       },
       GRAPHS_FAILURE
     ]
