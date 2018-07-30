@@ -177,6 +177,14 @@ h4 {
     background-image: linear-gradient(167deg, #8e80f3, #6da5e6);
 }
 
+.white {
+    color: white;
+}
+
+.dark {
+    color: #9b9b9b;
+}
+
 #user_portal {
     font-family: "Roboto";
     font-size: 12px;
@@ -186,7 +194,6 @@ h4 {
     line-height: normal;
     letter-spacing: normal;
     text-align: right;
-    color: #ffffff;
 }
 
 .title_content {

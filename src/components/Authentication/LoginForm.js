@@ -50,7 +50,7 @@ export default class LoginForm extends Component {
       <div>
         <div id="menu_bar">
           <div id="logo"></div>
-          <div id="user_portal">Sign up</div>
+          <div id="user_portal" className="white">Sign up</div>
         </div>
         <div id="signup_banner">
           <div className="title_content">
