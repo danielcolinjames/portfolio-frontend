@@ -1,0 +1,225 @@
+.chartHoverCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    margin: 20px;
+}
+
+.chartHoverCardContent {
+    /* height: 204px; */
+    width: 200px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12), 0 12px 24px 0 rgba(0,0,0,0.05);
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ----- Top bar ----- */
+/* ------------------- */
+/* ------------------- */
+
+.chartHoverCardTopBarContainer {
+    height: 44px;
+    width: 100%;
+    background-color: #f2f2f2;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.chartHoverCardTopBarWrapper {
+    /* I don't understand why this works. I thought width 100% isn't supposed to account for margins... */
+    margin: 0px 16px;
+    width: 100%;
+}
+
+.chartHoverCardTopBarContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chartHoverCardTopBarFrom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.chartHoverCardTopBarFromLogo {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+}
+
+.chartHoverCardTopBarFromName {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+.chartHoverCardTopBarArrow {
+    height: 24px;
+}
+
+.chartHoverCardTopBarArrowImg {
+    height: 24px;
+    width: 24px;
+}
+
+.chartHoverCardTopBarTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.chartHoverCardTopBarToAmount {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* -------------------------- */
+/* -------------------------- */
+/* ----- Middle section ----- */
+/* -------------------------- */
+/* -------------------------- */
+
+/* ---- */
+/* TIME */
+/* ---- */
+.chartHoverCardPriceSectionContainer {
+    height: 58px;
+    margin: 0px 16px;
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.chartHoverCardPriceSectionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* "Price" */
+.chartHoverCardPriceSectionLabel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #9b9b9b;
+}
+
+/* Holds {props.price} and percentage change indicator */
+.chartHoverCardPriceSectionPriceContainer {
+    width: 100%;
+    height: 18px;
+    margin: 3px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chartHoverCardPriceSectionPrice {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* ------- */
+/* AVERAGE */
+/* ------- */
+.chartHoverCardAverageSectionContainer {
+    height: 58px;
+    margin: 0px 16px;
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.chartHoverCardAverageSectionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* "Avg. Buy/Sell Price" */
+.chartHoverCardAverageSectionLabel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #9b9b9b;
+}
+
+/* Holds {props.price} and percentage change indicator */
+.chartHoverCardAverageSectionPriceContainer {
+    width: 100%;
+    height: 18px;
+    margin: 3px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chartHoverCardAverageSectionPrice {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* ---- */
+/* TIME */
+/* ---- */
+.chartHoverCardTimeSectionContainer {
+    height: 44px;
+    margin: 0px 16px;
+    /* box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);  */
+}
+
+.chartHoverCardTimeSectionContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.chartHoverCardTimeSectionTime {
+    margin: 0 8px 0 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #9b9b9b;
+}
+
+.chartHoverCardTimeSectionDate {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+}
