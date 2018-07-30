@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Route, Switch, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { getTradesForCoin } from '../actions/trades';
@@ -35,6 +34,7 @@ class TransactionsContainer extends Component {
   render() {
     let coin = this.props.match.params.coin;
     let lastTrade = (this.props.trades && this.props.trades[coin]) ? this.props.trades[coin][0] : null;
+    let marketSlug = lastTrade ? lastTrade.market.slug : null;
     return (
       // <div className="transactions container">
       //   <div className="transactions sidebar">
@@ -97,10 +97,7 @@ class TransactionsContainer extends Component {
         <div id='chartAndTransactions'>
           <div id='chartOverlay' />
           <div className="transactions graph">
-            <Switch>
-              <Route path="/transactions/:coin/:marketSlug/" component={PriceGraphContainer} />
-              {/* <Route path="/transactions/:coin/" component={PriceGraphContainer} /> */}
-            </Switch>
+            <PriceGraphContainer coin={coin} marketSlug={marketSlug} />
           </div>
 
           {/* {props.trades.map((trade, i) => {
@@ -118,12 +115,7 @@ class TransactionsContainer extends Component {
           {/* <div className="transactions list">
           <h1>Transactions list!</h1> */}
           {lastTrade &&
-            (
-              <div>
-                <Redirect to={`/transactions/${coin}/${lastTrade.market.slug}/`}/>
-                <TransactionList coin={coin} trades={this.props.trades[coin]} />
-              </div>
-            )
+            <TransactionList coin={coin} trades={this.props.trades[coin]} />
           }
           {/* </div> */}
 

@@ -7,14 +7,24 @@ import { getPriceGraph } from '../actions/priceGraphs';
 
 
 class PriceGraphContainer extends Component {
-  componentWillMount () {
-    let marketSlug = this.props.match.params.marketSlug;
-    this.props.getPriceGraph(marketSlug);
+  fetchData() {
+    if (this.props.marketSlug) {
+      this.props.getPriceGraph(this.props.marketSlug);
+    }
+  }
+  componentWillMount() {
+    this.fetchData()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.coin !== prevProps.coin || this.props.marketSlug !== prevProps.marketSlug) {
+      this.fetchData()
+    }
   }
 
   render () {
-    let coin = this.props.match.params.coin;
-    let marketSlug = this.props.match.params.marketSlug;
+    let coin = this.props.coin;
+    let marketSlug = this.props.marketSlug;
     let thisMarketTrades = this.props.trades[coin] ? this.props.trades[coin].filter( item => item.market.slug === marketSlug ) : []
     return (
       <PriceGraph priceGraph={this.props.graphs[marketSlug]} trades={thisMarketTrades} />
