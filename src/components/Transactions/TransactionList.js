@@ -15,7 +15,7 @@ export default ({ trades, coin }) => (
         <th id='transactionHistoryTableSourceHeader'>Source</th>
       </tr>
       {trades.map((trade) => (
-        // <li key={trade.uuid}><Link to={`/transactions/${coin}/${trade.market.uuid}/`}><TransactionItem trade={trade}/></Link></li>
+        // <li key={trade.uuid}><Link to={`/transactions/${coin}/${trade.market.slug}/`}><TransactionItem trade={trade}/></Link></li>
         <TransactionItem key={trade.uuid} trade={trade} />
       ))}
     </tbody>

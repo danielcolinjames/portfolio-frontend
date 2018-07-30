@@ -47,7 +47,7 @@ class TransactionsContainer extends Component {
       //   </div>
       //   <div className="transactions graph">
       //     <Switch>
-      //       <Route path="/transactions/:coin/:marketUUID/" component={PriceGraphContainer}/>
+      //       <Route path="/transactions/:coin/:marketSlug/" component={PriceGraphContainer}/>
       //     </Switch>
       //   </div>
       //   <div className="transactions list">
@@ -98,7 +98,7 @@ class TransactionsContainer extends Component {
           <div id='chartOverlay' />
           <div className="transactions graph">
             <Switch>
-              <Route path="/transactions/:coin/:marketUUID/" component={PriceGraphContainer} />
+              <Route path="/transactions/:coin/:marketSlug/" component={PriceGraphContainer} />
               {/* <Route path="/transactions/:coin/" component={PriceGraphContainer} /> */}
             </Switch>
           </div>
@@ -120,7 +120,7 @@ class TransactionsContainer extends Component {
           {lastTrade &&
             (
               <div>
-                <Redirect to={`/transactions/${coin}/${lastTrade.market.uuid}/`}/>
+                <Redirect to={`/transactions/${coin}/${lastTrade.market.slug}/`}/>
                 <TransactionList coin={coin} trades={this.props.trades[coin]} />
               </div>
             )
