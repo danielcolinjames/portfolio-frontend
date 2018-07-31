@@ -17,31 +17,31 @@ export default ({ trade }) => {
     if (trade.side === "sell") {
         transactionHistoryItemFirstColumnContent = (
             <div className='transactionHistoryItemInfoContainer'>
-              {/* Sell icon */}
-              <img src={SellIcon} className='transactionHistoryItemLogo' alt="" />
-              {/* Transaction info (sell icon, logo, amount -> $amount */}
-              <div className='transactionHistoryItemInfoContent'>
-                {/* [BTC] 0.5 */}
-                <div className='transactionHistoryItemInfoFrom'>
-                  <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.base} />
+                {/* Sell icon */}
+                <img src={SellIcon} className='transactionHistoryItemLogo' alt="" />
+                {/* Transaction info (sell icon, [logo] amount ->  [logo] amount */}
+                <div className='transactionHistoryItemInfoContent'>
+                    {/* [NEO] 1.00 */}
+                    <div className='transactionHistoryItemInfoFrom'>
+                        <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.base} />
 
-                  <p className='transactionHistoryItemInfoFromName'>
-                    {trade.amount}
-                  </p>
-                </div>
+                        <p className='transactionHistoryItemInfoFromName'>
+                            {trade.amount}
+                        </p>
+                    </div>
 
-                {/* -> */}
-                <div className='transactionHistoryItemInfoArrow'>
-                  <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
-                </div>
+                    {/* -> */}
+                    <div className='transactionHistoryItemInfoArrow'>
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
+                    </div>
 
-                {/* USD $3,300 */}
-                <div className='transactionHistoryItemInfoTo'>
-                  <p className='transactionHistoryItemInfoToAmount'>
-                    <span className='dollars'>
-                      <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.quote} />
-                      {(trade.amount * trade.cost).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                            <span className='cents'>.{Math.round((trade.amount * trade.cost) * 100) % 100}</span>
+                    {/* [BTC] 0.005 */}
+                    <div className='transactionHistoryItemInfoTo'>
+                        <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.quote} />
+                        {/* <span className='dollars'>{(trade.amount * trade.cost).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                            <span className='cents'>.{Math.round((trade.amount * trade.cost) * 100) % 100}</span> */}
+                        <p className='transactionHistoryItemInfoToAmount'>
+                            {trade.cost}
                         </p>
                     </div>
                 </div>
@@ -50,29 +50,29 @@ export default ({ trade }) => {
     } else if (trade.side === "buy") {
         transactionHistoryItemFirstColumnContent = (
             <div className='transactionHistoryItemInfoContainer'>
-              {/* Buy icon */}
-              <img src={BuyIcon} className='transactionHistoryItemLogo' alt="" />
-              {/* Transaction info (buy icon, $amount -> logo, amount */}
-              <div className='transactionHistoryItemInfoContent'>
-                {/* USD $3,300 */}
-                <div className='transactionHistoryItemInfoTo'>
-                  <p className='transactionHistoryItemInfoToAmount'>
-                    <span className='dollars'>
-                      <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.quote} />
-                      {(trade.amount * trade.cost).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                    <span className='cents'>.{Math.round((trade.amount * trade.cost) * 100) % 100}</span>
-                  </p>
-                </div>
+                {/* Buy icon */}
+                <img src={BuyIcon} className='transactionHistoryItemLogo' alt="" />
+                {/* Transaction info (buy icon, [logo] amount -> [logo] + amount */}
+                <div className='transactionHistoryItemInfoContent'>
+                    {/* 0.005 BTC */}
+                    <div className='transactionHistoryItemInfoTo'>
+                        <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.quote} />
+                        {/* <span className='dollars'>{(trade.amount * trade.cost).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                            <span className='cents'>.{Math.round((trade.amount * trade.cost) * 100) % 100}</span> */}
+                        <p className='transactionHistoryItemInfoToAmount'>
+                            {trade.cost}
+                        </p>
+                    </div>
 
-                {/* -> */}
-                <div className='transactionHistoryItemInfoArrow'>
-                  <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
-                </div>
+                    {/* -> */}
+                    <div className='transactionHistoryItemInfoArrow'>
+                        <img className='transactionHistoryItemInfoArrowImg' src={convertArrow} alt="" />
+                    </div>
 
-                {/* [BTC] 0.5 */}
-                <div className='transactionHistoryItemInfoFrom'>
-                  <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.base} />
-                  <p className='transactionHistoryItemInfoFromName'>
+                    {/* [NEO] 1.00 */}
+                    <div className='transactionHistoryItemInfoFrom'>
+                        <CryptoIcon className='transactionHistoryItemInfoFromLogo' coin={trade.market.base} />
+                        <p className='transactionHistoryItemInfoFromName'>
                             {trade.amount}
                         </p>
                     </div>
