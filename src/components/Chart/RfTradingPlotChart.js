@@ -8,18 +8,30 @@ import {
     AreaSeries,
     GradientDefs,
     linearGradient,
-    Hint
+    Hint,
+    CustomSVGSeries,
+    MarkSeries
 } from 'react-vis';
-
 import moment from 'moment';
 
+import BuyIcon from './BuyIcon';
+import SellIcon from './SellIcon';
+import ChartHoverCard from './ChartHoverCard';
+
+
+if (!Array.prototype.last){
+    Array.prototype.last = function(){
+        return this[this.length - 1];
+    };
+};
 
 export default class TradingPlotChart extends Component {
   state = {
     // xTicks: 10,
-    minDate: moment().subtract(10, 'days').startOf('day'),
+    minDate: moment().subtract(3, 'months').subtract(10, 'days').startOf('day'),
     maxDate: moment().startOf('day'),
-    yTicks: 7
+    yTicks: 7,
+    hoveredTrade: null,
   }
 
   render() {
@@ -59,6 +71,8 @@ export default class TradingPlotChart extends Component {
       }
     }
 
+    const { hoveredCell } = this.state;
+
     const xTicks = moment.duration(this.state.maxDate.diff(this.state.minDate)).asDays();
 
     const chartStyle = {
@@ -75,16 +89,28 @@ export default class TradingPlotChart extends Component {
         { x: moment.unix(pricePoint[0]/1000).dayOfYear(), y: pricePoint[4] }
       ) ) : []
 
-    const lastPrice = this.props.priceGraph ? this.props.priceGraph.slice(-1)[0][4] : 0
+    const lastPrice = this.props.priceGraph ? this.props.priceGraph.last()[4] : 0
+
+    const hintLocation = priceData.length > 0 && lastPrice ?
+      { x: priceData.last().x, y: lastPrice } : null;
 
     const filteredTradesData = this.props.trades ?
       this.props.trades.filter( trade => {
-        const priceDate = moment.unix(trade.sync_datetime).startOf('day');
+        const priceDate = moment(trade.close_date).startOf('day');
         return priceDate >= this.state.minDate && priceDate <= this.state.maxDate;
       }) : []
 
-    const hintLocation = priceData.length > 0 && lastPrice ?
-      { x: priceData.slice(-1)[0].x, y: lastPrice } : null;
+    const sellTrades = filteredTradesData.filter(trade => (
+      trade.side === 'sell'
+    ) ).map( trade => (
+      { x: moment(trade.close_date).dayOfYear(), y: trade.avg_price, trade }
+    ) )
+
+    const buyTrades = filteredTradesData.filter(trade => (
+      trade.side === 'buy'
+    ) ).map( trade => (
+      { x: moment(trade.close_date).dayOfYear(), y: trade.avg_price, trade }
+    ) )
 
     return (
       <FlexibleXYPlot {...chartStyle}>
@@ -134,6 +160,34 @@ export default class TradingPlotChart extends Component {
           </Hint>
         }
 
+        <CustomSVGSeries data={buyTrades} customComponent={BuyIcon} />
+        <CustomSVGSeries data={sellTrades} customComponent={SellIcon} />
+        <MarkSeries
+          stroke="none"
+          strokeWidth={1}
+          fill="none"
+          size={16}
+          style={{
+            cursor: 'pointer'
+          }}
+          data={[...buyTrades, ...sellTrades]}
+          onValueMouseOver={v => this.setState({
+            hoveredCell: v
+          })}
+          onValueMouseOut={v => this.setState({
+            hoveredCell: null
+          })} />
+        {hoveredCell &&
+          <Hint value={hoveredCell}>
+            <ChartHoverCard
+              // All dummy values for testing
+              price={hoveredCell.trade.avg_price}
+              amount={hoveredCell.trade.amount}
+              valueChange={(hoveredCell.trade.avg_price - 10000) / 100}
+              datetime={moment(hoveredCell.trade.close_date)}
+            />
+          </Hint>
+        }
       </FlexibleXYPlot>
     );
   }
