@@ -6,6 +6,18 @@ import './HoldingCard.css';
 
 import CryptoIcon from 'react-webfont-cryptocoins'
 
+import HoldingCardPriceGraph from './HoldingCardPriceGraph';
+
+
+const data = [
+  { x: 1515196800000, y: 0.00022501 },
+  { x: 1515283200000, y: 0.000163 },
+  { x: 1515369600000, y: 0.000237 },
+  { x: 1515456000000, y: 0.00024206 },
+  { x: 1515542400000, y: 0.00025999 },
+  { x: 1515628800000, y: 0.00020398 },
+  { x: 1515715200000, y: 0.0001064 }
+]
 
 export default ({ holding }) => {
 
@@ -39,28 +51,6 @@ export default ({ holding }) => {
     );
   }
 
-  // only show price section on bottom right if price is passed in
-  let priceSection = null;
-  if (typeof (holding.price) !== 'undefined') {
-    priceSection = (
-      <div className='holdingPriceInfoContainer'>
-        <p className='holdingPriceLabel'>
-          Price
-              </p>
-        <p className='holdingPriceValue'>
-          <span className='dollars'>${holding.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-          <span className='cents'>.{Math.abs(Math.round(holding.price * 100) % 100)}</span>
-        </p>
-      </div>
-    );
-  } else {
-    // TODO: priceSection gets populated with Value data
-  }
-
-  // const logoPath = '../../node_modules/cryptocurrency-icons/dist/128/color/' + holding.coin.toLowerCase() + '.png';
-  // const logo = tryRequire(logoPath) ? tryRequire(logoPath) : btc;
-  
-
   return (
     // <div>
     //   <dl>
@@ -93,7 +83,7 @@ export default ({ holding }) => {
             <div className='holdingCurrencyAmountInfo'>
               <p className='holdingCurrencyAmountLabel'>
                 Amount
-                        </p>
+              </p>
               <p className='holdingCurrencyAmountBalance'>
                 {/* fix to 4 decimal places unless it's a 0.00122413853 type of balance */}
                 {/* TODO: more robust formatting rules here */}
@@ -108,7 +98,7 @@ export default ({ holding }) => {
             <div className='holdingValueContainer'>
               <p className='holdingValueLabel'>
                 Value
-                        </p>
+              </p>
               <p className='holdingValueValue'>
                 <span className='dollars'>${holding.balance_in_usd.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                 <span className='cents'>.{Math.round(holding.balance_in_usd * 100) % 100}</span>
@@ -121,28 +111,16 @@ export default ({ holding }) => {
         </div>
         {/* Bottom section */}
         <div className='holdingCardBottomBar'>
-          <div className='holdingCardGraphContainer'>
-            {/* <Sparklines
-                            height={30}
-                            data={holding.data}
-                            style={{
-                                margin: 0
-                            }}> */}
-            {/* currently not possible to have a gradient fill: https://github.com/borisyankov/react-sparklines/issues/87 */}
-            {/* <SparklinesCurve
-                                color='#f7931a'
-                                style={{
-                                    margin: 0
-                                }} /> */}
-            {/* This library can make spots on the chart, but the only option is end AND start spots */}
-            {/* <SparklinesSpots
-                            size={0.5}
-                            style={{
-                                stroke: '#f7931a', strokeWidth: 3, fill: '#f7931a'
-                            }} /> */}
-            {/* </Sparklines> */}
+          <HoldingCardPriceGraph graphData={data} />
+          <div className='holdingPriceInfoContainer'>
+            <p className='holdingPriceLabel'>
+              Price
+            </p>
+            <p className='holdingPriceValue'>
+              <span className='dollars'>${(holding.coin_to_btc_price * holding.btc_to_usd_price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+              <span className='cents'>.{Math.abs(Math.round((holding.coin_to_btc_price * holding.btc_to_usd_price) * 100) % 100)}</span>
+            </p>
           </div>
-          {priceSection}
         </div>
       </Link>
     </div>
