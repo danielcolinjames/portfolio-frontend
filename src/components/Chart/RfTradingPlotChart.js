@@ -24,7 +24,7 @@ export default class TradingPlotChart extends Component {
 
   render() {
     const styles = {
-      priceHint: {
+      currentPrice: {
         background: '#4A90E2',
         display: 'flex',
         flexDirection: 'column',
@@ -46,6 +46,16 @@ export default class TradingPlotChart extends Component {
         // marginRight: 64,
         height: 20,
         width: 64,
+      },
+      currentPriceLine: {
+        width: 'calc(100% - 100px)',
+        height: "1px",
+        backgroundColor: "#65a8f5"
+      },
+      yAxis: {
+        fontFamily: 'SFUIDisplay-Bold, sans-serif',
+        fontSize: '12px',
+        color: '#9b9b9b'
       }
     }
 
@@ -86,11 +96,7 @@ export default class TradingPlotChart extends Component {
           </linearGradient>
         </GradientDefs>
         <XAxis tickTotal={xTicks} />
-        <YAxis tickTotal={this.state.yTicks} orientation='right' style={{
-          fontFamily: 'SFUIDisplay-Bold, sans-serif',
-          fontSize: '12px',
-          color: '#9b9b9b'
-        }} />
+        <YAxis tickTotal={this.state.yTicks} orientation='right' style={styles.yAxis} />
         <VerticalGridLines />
 
         {/* Price graph */}
@@ -109,7 +115,7 @@ export default class TradingPlotChart extends Component {
                 horizontal: 'right',
                 vertical: 'top'
             }} >
-            <div style={styles.priceHint}>
+            <div style={styles.currentPrice}>
               <p
                 style={{
                     padding: 0,
@@ -121,11 +127,7 @@ export default class TradingPlotChart extends Component {
         }
         { hintLocation &&
           <Hint
-            style={{
-              width: 'calc(100% - 100px)',
-              height: "1px",
-              backgroundColor: "#65a8f5"
-            }}
+            style={styles.currentPriceLine}
             value={hintLocation} >
             {/* if there's a div it doesn't use the default Hint styling component */}
             <div></div>
