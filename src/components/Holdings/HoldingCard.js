@@ -6,6 +6,15 @@ import './HoldingCard.css';
 
 import CryptoIcon from 'react-webfont-cryptocoins'
 
+const data = [
+  { x: 1515196800000, y: 0.00022501 },
+  { x: 1515283200000, y: 0.000163 },
+  { x: 1515369600000, y: 0.000237 },
+  { x: 1515456000000, y: 0.00024206 },
+  { x: 1515542400000, y: 0.00025999 },
+  { x: 1515628800000, y: 0.00020398 },
+  { x: 1515715200000, y: 0.0001064 }
+]
 
 export default ({ holding }) => {
 
