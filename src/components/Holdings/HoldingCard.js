@@ -108,26 +108,6 @@ export default ({ holding }) => {
         </div>
         {/* Bottom section */}
         <div className='holdingCardBottomBar'>
-          <div className='holdingCardGraphContainer'>
-            {/* <Sparklines
-                            height={30}
-                            data={holding.data}
-                            style={{
-                                margin: 0
-                            }}> */}
-            {/* currently not possible to have a gradient fill: https://github.com/borisyankov/react-sparklines/issues/87 */}
-            {/* <SparklinesCurve
-                                color='#f7931a'
-                                style={{
-                                    margin: 0
-                                }} /> */}
-            {/* This library can make spots on the chart, but the only option is end AND start spots */}
-            {/* <SparklinesSpots
-                            size={0.5}
-                            style={{
-                                stroke: '#f7931a', strokeWidth: 3, fill: '#f7931a'
-                            }} /> */}
-            {/* </Sparklines> */}
           <HoldingCardPriceGraph graphData={data} />
           <div className='holdingPriceInfoContainer'>
             <p className='holdingPriceLabel'>
