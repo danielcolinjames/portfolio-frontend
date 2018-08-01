@@ -48,29 +48,6 @@ export default ({ holding }) => {
     );
   }
 
-  // only show price section on bottom right if price is passed in
-  let priceSection = null;
-
-  if (typeof (holding.price) !== 'undefined') {
-    priceSection = (
-      <div className='holdingPriceInfoContainer'>
-        <p className='holdingPriceLabel'>
-          Price
-        </p>
-        <p className='holdingPriceValue'>
-          <span className='dollars'>${holding.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-          <span className='cents'>.{Math.abs(Math.round(holding.price * 100) % 100)}</span>
-        </p>
-      </div>
-    );
-  } else {
-    // TODO: priceSection gets populated with Value data
-  }
-
-  // const logoPath = '../../node_modules/cryptocurrency-icons/dist/128/color/' + holding.coin.toLowerCase() + '.png';
-  // const logo = tryRequire(logoPath) ? tryRequire(logoPath) : btc;
-
-
   return (
     // <div>
     //   <dl>
@@ -151,8 +128,16 @@ export default ({ holding }) => {
                                 stroke: '#f7931a', strokeWidth: 3, fill: '#f7931a'
                             }} /> */}
             {/* </Sparklines> */}
+          <HoldingCardPriceGraph graphData={data} />
+          <div className='holdingPriceInfoContainer'>
+            <p className='holdingPriceLabel'>
+              Price
+            </p>
+            <p className='holdingPriceValue'>
+              <span className='dollars'>${(holding.coin_to_btc_price * holding.btc_to_usd_price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+              <span className='cents'>.{Math.abs(Math.round((holding.coin_to_btc_price * holding.btc_to_usd_price) * 100) % 100)}</span>
+            </p>
           </div>
-          {priceSection}
         </div>
       </Link>
     </div>
