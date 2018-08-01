@@ -5,6 +5,8 @@ import PercentageChangeIndicator from '../Global/PercentageChangeIndicator';
 
 import btc from '../../assets/images/logos/bitcoin-logo@3x.png';
 import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
+import CryptoIcon from 'react-webfont-cryptocoins'
+
 
 const ChartHoverCard = (props) => {
     return (
@@ -18,7 +20,7 @@ const ChartHoverCard = (props) => {
                 <div className='chartHoverCardTopBarContent'>
                   {/* BTC 0.5 */}
                   <div className='chartHoverCardTopBarFrom'>
-                    <img className='chartHoverCardTopBarFromLogo' src={btc} alt="" />
+                    <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.base} />
                     <p className='chartHoverCardTopBarFromName'>
                       {props.amount}
                     </p>
@@ -32,7 +34,9 @@ const ChartHoverCard = (props) => {
                   {/* USD $3,300 */}
                   <div className='chartHoverCardTopBarTo'>
                     <p className='chartHoverCardTopBarToAmount'>
-                      <span className='dollars'>${(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                      <span className='dollars'>
+                        <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
+                        {(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                       <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
                     </p>
                   </div>
@@ -48,28 +52,29 @@ const ChartHoverCard = (props) => {
                 </p>
                 <div className='chartHoverCardPriceSectionPriceContainer'>
                   <p className='chartHoverCardPriceSectionPrice'>
-                    <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+                    <span className='dollars'>
+                      <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
+                      {props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
                     <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
                   </p>
                   <PercentageChangeIndicator valueChange={props.valueChange} />
                 </div>
               </div>
             </div>
-            <div className='chartHoverCardAverageSectionContainer'>
+            {/* <div className='chartHoverCardAverageSectionContainer'>
               <div className='chartHoverCardAverageSectionContent'>
                 <p className='chartHoverCardAverageSectionLabel'>
-                  My Avg. Sell Price
-                  {/* TODO: Make this conditional with something like props.buy === 1 ? "Buy" : "Sell" */}
+              My Avg. Sell Price
                 </p>
                 <div className='chartHoverCardAverageSectionPriceContainer'>
-                  <p className='chartHoverCardAverageSectionPrice'>
-                    <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                    <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
-                  </p>
-                  <PercentageChangeIndicator valueChange={props.valueChange} />
+              <p className='chartHoverCardAverageSectionPrice'>
+              <span className='dollars'>${props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+              <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
+              </p>
+              <PercentageChangeIndicator valueChange={props.valueChange} />
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='chartHoverCardTimeSectionContainer'>
               <div className='chartHoverCardTimeSectionContent'>
                 <p className='chartHoverCardTimeSectionTime'>
