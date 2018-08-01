@@ -1,0 +1,22 @@
+.priceHint {
+  background: #4A90E2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: SFUIDisplay-Bold, sans-serif;
+  font-size: 12px;
+  color: white;
+  /* text: {
+    display: 'none'
+  };
+  value: {
+    color: 'red'
+  }; */
+  border-radius: 4;
+  padding: 0;
+  margin-bottom: -10;
+  height: 20;
+  width: 64;
+}
