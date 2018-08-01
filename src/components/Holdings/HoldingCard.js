@@ -6,6 +6,9 @@ import './HoldingCard.css';
 
 import CryptoIcon from 'react-webfont-cryptocoins'
 
+import HoldingCardPriceGraph from './HoldingCardPriceGraph';
+
+
 const data = [
   { x: 1515196800000, y: 0.00022501 },
   { x: 1515283200000, y: 0.000163 },
