@@ -67,7 +67,7 @@ export default class TradingPlotChart extends Component {
         height: 20,
       },
       currentPriceLine: {
-        width: 'calc(100% - 100px)',
+        width: 'calc(100% - 80px)',
         height: "1px",
         backgroundColor: "#65a8f5"
       },
