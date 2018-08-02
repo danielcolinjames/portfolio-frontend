@@ -93,7 +93,7 @@ const ChartHoverCard = (props) => {
             <div className='chartHoverCardTimeSectionContainer'>
               <div className='chartHoverCardTimeSectionContent'>
                 <p className='chartHoverCardTimeSectionTime'>
-                  {props.datetime.format()}
+                  {props.datetime.format("D MMM Y, h:m a")}
                 </p>
               </div>
             </div>

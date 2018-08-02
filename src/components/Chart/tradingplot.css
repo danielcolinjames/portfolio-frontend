@@ -1,7 +1,7 @@
-g.rv-xy-plot__axis__tick:nth-child(5n) {
+.rv-xy-plot__axis--horizontal  .rv-xy-plot__axis__tick:nth-child(5n+2) {
     display: block;
 }
 
-g.rv-xy-plot__axis__tick {
+.rv-xy-plot__axis--horizontal .rv-xy-plot__axis__tick {
     display: none;
 }

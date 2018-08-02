@@ -24,7 +24,7 @@ if (!Array.prototype.last){
     Array.prototype.last = function(){
         return this[this.length - 1];
     };
-};
+}
 
 export default class TradingPlotChart extends Component {
   state = {
@@ -87,7 +87,7 @@ export default class TradingPlotChart extends Component {
         const priceDate = moment.unix(pricePoint[0]/1000).startOf('day');
         return priceDate >= this.state.minDate && priceDate <= this.state.maxDate;
       } ).map( pricePoint => (
-        { x: moment.unix(pricePoint[0]/1000).dayOfYear(), y: pricePoint[4] }
+        { x: pricePoint[0], y: pricePoint[4] }
       ) ) : []
 
     const currentPrice = this.props.priceGraph ? this.props.priceGraph.last()[4] : 0
@@ -104,13 +104,13 @@ export default class TradingPlotChart extends Component {
     const sellTrades = filteredTradesData.filter(trade => (
       trade.side === 'sell'
     ) ).map( trade => (
-      { x: moment(trade.close_date).dayOfYear(), y: trade.avg_price, trade }
+      { x: moment(trade.close_date).valueOf(), y: trade.avg_price, trade }
     ) )
 
     const buyTrades = filteredTradesData.filter(trade => (
       trade.side === 'buy'
     ) ).map( trade => (
-      { x: moment(trade.close_date).dayOfYear(), y: trade.avg_price, trade }
+      { x: moment(trade.close_date).valueOf(), y: trade.avg_price, trade }
     ) )
 
     return (
@@ -122,7 +122,7 @@ export default class TradingPlotChart extends Component {
             <stop offset="100%" stopColor="#F7931A" stopOpacity={0.0} />
           </linearGradient>
         </GradientDefs>
-        <XAxis tickTotal={xTicks} />
+        <XAxis tickTotal={xTicks} tickFormat={ v => moment(v).format("MMM D")} />
         <YAxis tickTotal={this.state.yTicks} orientation='right' style={styles.yAxis} />
         <VerticalGridLines />
 
