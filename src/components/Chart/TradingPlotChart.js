@@ -89,10 +89,10 @@ export default class TradingPlotChart extends Component {
         { x: moment.unix(pricePoint[0]/1000).dayOfYear(), y: pricePoint[4] }
       ) ) : []
 
-    const lastPrice = this.props.priceGraph ? this.props.priceGraph.last()[4] : 0
+    const currentPrice = this.props.priceGraph ? this.props.priceGraph.last()[4] : 0
 
-    const hintLocation = priceData.length > 0 && lastPrice ?
-      { x: priceData.last().x, y: lastPrice } : null;
+    const hintLocation = priceData.length > 0 && currentPrice ?
+      { x: priceData.last().x, y: currentPrice } : null;
 
     const filteredTradesData = this.props.trades ?
       this.props.trades.filter( trade => {
@@ -147,7 +147,7 @@ export default class TradingPlotChart extends Component {
                     padding: 0,
                     margin: 0
                 }}
-              >{lastPrice}</p>
+              >{currentPrice}</p>
             </div>
           </Hint>
         }
@@ -185,7 +185,7 @@ export default class TradingPlotChart extends Component {
               quote={hoveredCell.trade.market.quote}
               price={hoveredCell.trade.avg_price}
               amount={hoveredCell.trade.amount}
-              valueChange={(hoveredCell.trade.avg_price - 10000) / 100}
+              valueChange={100 * (hoveredCell.trade.avg_price - currentPrice) / currentPrice}
               datetime={moment(hoveredCell.trade.close_date)}
             />
           </Hint>
