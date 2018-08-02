@@ -30,7 +30,7 @@ export default ({ totals }) => {
             <div>
               <h5>Total</h5>
               <div className="money_b">
-                <span className="metric_small">$</span>{totals.balance_in_usd}
+                <span className="metric_small">$</span>{totals.balance_in_usd && totals.balance_in_usd.toFixed(2)}
                 {/* <span className="money_s">.01</span> */}
 
                 {/* I think we need to use lifecycle management to place "..." or something in place of the total until it's loaded. */}
