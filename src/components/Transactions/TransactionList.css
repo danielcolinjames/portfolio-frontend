@@ -185,7 +185,7 @@
     border: none;
 }
 
-#transactionHistoryTable tr:hover {
+#transactionHistoryTable tr:not(#transactionHistoryTableHeaderRow):hover {
   background-color: #eee !important;
   transition-duration: .2s;
   box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
