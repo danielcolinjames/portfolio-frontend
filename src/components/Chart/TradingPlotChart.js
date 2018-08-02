@@ -85,7 +85,7 @@ export default class TradingPlotChart extends Component {
     const chartStyle = {
       height: 466,
       yPadding: 50,
-      margin: { top: 50, right: 100, left: 0, bottom: 50 }
+      margin: { top: 20, right: 80, left: 0, bottom: 50 }
     }
 
     const priceData = this.props.priceGraph ?
