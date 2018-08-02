@@ -1,16 +1,18 @@
 import { combineReducers } from 'redux';
-import auth, * as fromAuth from './auth.js'
-import holdings from './holdings.js'
-import totals from './totals.js'
-import graphs from './priceGraphs.js'
-import trades from './trades.js'
+import auth, * as fromAuth from './auth'
+import holdings from './holdings'
+import totals from './totals'
+import graphs from './priceGraphs'
+import trades from './trades'
+import users from './users'
 
 export default combineReducers({
   auth,
   holdings,
   totals,
   graphs,
-  trades
+  trades,
+  users
 });
 
 export const isAuthenticated =

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import { getHoldings } from '../actions/holdings';
 import { getTotalHoldings } from '../actions/totals';
+import { getCurrentUser } from '../actions/users';
 
 import Header from './Header';
 import HoldingsContainer from './HoldingsContainer';
@@ -16,6 +17,7 @@ class Home extends Component {
     document.body.style.backgroundColor = '#eaeef1';
     this.props.getHoldings();
     this.props.getTotalHoldings();
+    this.props.getCurrentUser();
   }
 
   render() {
@@ -23,10 +25,10 @@ class Home extends Component {
       <div className="App">
         <Header />
         {/* <div className="main-container"> */}
-          <Switch>
-            <Route path="/" exact component={HoldingsContainer} />
-            <Route path="/transactions/:coin/" component={TransactionsContainer}/>
-          </Switch>
+        <Switch>
+          <Route path="/" exact component={HoldingsContainer} />
+          <Route path="/transactions/:coin/" component={TransactionsContainer}/>
+        </Switch>
         {/* </div> */}
       </div>
     );
@@ -37,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     getHoldings,
     getTotalHoldings,
+    getCurrentUser,
   }, dispatch);
 };
 

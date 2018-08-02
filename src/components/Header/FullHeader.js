@@ -6,22 +6,22 @@ import logo from '../../assets/images/logos/temp_logo.png';
 
 import PercentageChangeIndicator from '../Global/PercentageChangeIndicator';
 
-export default ({ totals }) => {
+export default ({ totals, user }) => {
 
   return (
     // <div className="header full">
     <div>
       {/* <dl>
-      <dt>Total Balance in BTC</dt>
-      <dd>{totals.balance_in_btc}</dd>
+        <dt>Total Balance in BTC</dt>
+        <dd>{totals.balance_in_btc}</dd>
 
-      <dt>Total Balance in USD</dt>
-      <dd>{totals.balance_in_usd}</dd>
-    </dl> */}
+        <dt>Total Balance in USD</dt>
+        <dd>{totals.balance_in_usd}</dd>
+      </dl> */}
 
       <div id="menu_bar">
         <img id="logo" src={logo} alt="" />
-        <div id="user_portal" className="blue">Sign in</div>
+        <div id="user_portal" className="blue">{user ? `hi ${user.username}!` : "Sign in"}</div>
       </div>
 
       <div id="glance_banner">

@@ -10,13 +10,13 @@ class HeaderContainer extends Component {
   render() {
     return (
       <header>
-        <FullHeader totals={this.props.totals} />
+        <FullHeader totals={this.props.totals} user={this.props.currentUser} />
       </header>
     );
   }
 }
 
-const mapStateToProps = ({ totals }) => ({ totals });
+const mapStateToProps = ({ totals, users: { currentUser } }) => ({ totals, currentUser });
 
 
 export default connect(mapStateToProps)(HeaderContainer);
