@@ -181,6 +181,7 @@ export default class TradingPlotChart extends Component {
           <Hint value={hoveredCell}>
             <ChartHoverCard
               // All dummy values for testing
+              side={hoveredCell.trade.side}
               base={hoveredCell.trade.market.base}
               quote={hoveredCell.trade.market.quote}
               price={hoveredCell.trade.avg_price}

@@ -8,6 +8,27 @@ import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
 import CryptoIcon from 'react-webfont-cryptocoins'
 
 
+const ChartHoverCardTopBarFrom = (props) => (
+  <div className='chartHoverCardTopBarFrom'>
+    <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.base} />
+    <p className='chartHoverCardTopBarFromName'>
+      {props.amount}
+    </p>
+  </div>
+)
+
+const ChartHoverCardTopBarTo = (props) => (
+  <div className='chartHoverCardTopBarTo'>
+    <p className='chartHoverCardTopBarToAmount'>
+      <span className='dollars'>
+        <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
+        {(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
+      <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
+    </p>
+  </div>
+)
+
+
 const ChartHoverCard = (props) => {
     return (
         <div className='chartHoverCardContainer'>
@@ -18,28 +39,22 @@ const ChartHoverCard = (props) => {
               <div className='chartHoverCardTopBarWrapper'>
                 {/* TODO: Conditional logic for swapping the order of "From" and "To" */}
                 <div className='chartHoverCardTopBarContent'>
-                  {/* BTC 0.5 */}
-                  <div className='chartHoverCardTopBarFrom'>
-                    <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.base} />
-                    <p className='chartHoverCardTopBarFromName'>
-                      {props.amount}
-                    </p>
-                  </div>
+                  {
+                    props.side === 'sell' ?
+                      <ChartHoverCardTopBarFrom {...props} /> :
+                      <ChartHoverCardTopBarTo {...props} />
+                  }
 
                   {/* -> */}
                   <div className='chartHoverCardTopBarArrow'>
                     <img className='chartHoverCardTopBarArrowImg' src={convertArrow} alt="" />
                   </div>
 
-                  {/* USD $3,300 */}
-                  <div className='chartHoverCardTopBarTo'>
-                    <p className='chartHoverCardTopBarToAmount'>
-                      <span className='dollars'>
-                        <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
-                        {(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                      <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
-                    </p>
-                  </div>
+                  {
+                    props.side === 'sell' ?
+                      <ChartHoverCardTopBarTo {...props} /> :
+                      <ChartHoverCardTopBarFrom {...props} />
+                  }
                 </div>
               </div>
             </div>
