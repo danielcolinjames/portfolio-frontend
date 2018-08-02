@@ -18,6 +18,7 @@ import BuyIcon from './BuyIcon';
 import SellIcon from './SellIcon';
 import ChartHoverCard from './ChartHoverCard';
 
+import './tradingplot.css';
 
 if (!Array.prototype.last){
     Array.prototype.last = function(){
