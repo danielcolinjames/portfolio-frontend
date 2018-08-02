@@ -180,18 +180,18 @@
     color: #9b9b9b;
 }
 
-tr {
+#transactionHistoryTable tr {
     height: 56px;
     border: none;
 }
 
-tr:hover {
+#transactionHistoryTable tr:hover {
   background-color: #eee !important;
   transition-duration: .2s;
   box-shadow: 0 24px 48px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transform: translate(0, -2px);
 }
 
-tr:nth-child(even) {
+#transactionHistoryTable tr:nth-child(even) {
     background-color: #f2f3f5;
 }

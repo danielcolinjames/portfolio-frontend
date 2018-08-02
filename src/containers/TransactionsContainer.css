@@ -180,11 +180,11 @@
     color: #9b9b9b;
 }
 
-tr {
+/* #transactionHistoryTable tr {
     height: 56px;
     border: none;
 }
 
-tr:nth-child(even) {
+#transactionHistoryTable tr:nth-child(even) {
     background-color: #f2f3f5;
-}
+} */
