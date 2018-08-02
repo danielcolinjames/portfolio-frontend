@@ -59,11 +59,12 @@ export default class TradingPlotChart extends Component {
           color: 'red'
         },
         borderRadius: 4,
-        padding: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        paddingRight: 10,
+        paddingLeft: 10,
         marginBottom: -10, // because there is no "centered" option in align.vertical
-        // marginRight: 64,
         height: 20,
-        width: 64,
       },
       currentPriceLine: {
         width: 'calc(100% - 100px)',

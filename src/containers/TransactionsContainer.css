@@ -136,7 +136,7 @@
 #chartAndTransactions {
     display: flex;
     flex-direction: column;
-
+    background-color: #fff;
     margin-left: 320px;
     margin-top: 160px;
     width: 100%;
