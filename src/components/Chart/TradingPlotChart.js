@@ -20,6 +20,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 import BuyIcon from './BuyIcon';
 import SellIcon from './SellIcon';
+import WhiteGradient from './WhiteGradient';
 import ChartHoverCard from './ChartHoverCard';
 
 import './tradingplot.css';
@@ -65,9 +66,10 @@ export default class TradingPlotChart extends Component {
         paddingLeft: 10,
         marginBottom: -10, // because there is no "centered" option in align.vertical
         height: 20,
+        width: 60
       },
       currentPriceLine: {
-        width: 'calc(100% - 100px)',
+        width: 'calc(100% - 80px)',
         height: "1px",
         backgroundColor: "#65a8f5"
       },
@@ -154,13 +156,14 @@ export default class TradingPlotChart extends Component {
             className="areaSeries"
             data={priceData} />
 
+
           { hintLocation &&
             <Hint
-              value={hintLocation}
-              align={{
-                horizontal: 'right',
-                vertical: 'top'
-              }} >
+            value={hintLocation}
+            align={{
+              horizontal: 'right',
+              vertical: 'top'
+            }} >
               <div style={styles.currentPrice}>
                 <p
                   style={{
@@ -173,8 +176,8 @@ export default class TradingPlotChart extends Component {
           }
           { hintLocation &&
             <Hint
-              style={styles.currentPriceLine}
-              value={hintLocation} >
+            style={styles.currentPriceLine}
+            value={hintLocation} >
               {/* if there's a div it doesn't use the default Hint styling component */}
               <div></div>
             </Hint>
@@ -182,6 +185,10 @@ export default class TradingPlotChart extends Component {
 
           <CustomSVGSeries data={buyTrades} customComponent={BuyIcon} />
           <CustomSVGSeries data={sellTrades} customComponent={SellIcon} />
+
+          {/* The white gradient lives at the first x position, and over top of the drawn buy/sell icons, but beneath the interactable versions of the buy/sell icons. */}
+          <CustomSVGSeries data={priceData.slice(0, 1)} customComponent={WhiteGradient}/>
+
           <MarkSeries
             stroke="none"
             strokeWidth={1}
