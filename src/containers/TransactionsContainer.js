@@ -97,7 +97,7 @@ class TransactionsContainer extends Component {
         </div>
 
         <div id='chartAndTransactions'>
-          <div id='chartOverlay' />
+          {/* <div id='chartOverlay' /> */}
           <div className="transactions graph">
             {/* <PriceGraphContainer coin={coin} marketSlug={marketSlug} /> */}
             <Switch>
