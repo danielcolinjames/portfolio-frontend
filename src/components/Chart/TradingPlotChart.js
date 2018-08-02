@@ -13,6 +13,10 @@ import {
     MarkSeries
 } from 'react-vis';
 import moment from 'moment';
+import 'react-dates/initialize';
+import { DateRangePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+
 
 import BuyIcon from './BuyIcon';
 import SellIcon from './SellIcon';
@@ -33,6 +37,7 @@ export default class TradingPlotChart extends Component {
     maxDate: moment().startOf('day'),
     yTicks: 7,
     hoveredTrade: null,
+    focusedInput: null
   }
 
   render() {
@@ -72,9 +77,9 @@ export default class TradingPlotChart extends Component {
       }
     }
 
-    const { hoveredCell } = this.state;
+    const { hoveredTrade, maxDate, minDate } = this.state;
 
-    const xTicks = moment.duration(this.state.maxDate.diff(this.state.minDate)).asDays();
+    const xTicks = maxDate && minDate? moment.duration(maxDate.diff(minDate)).asDays() : 10
 
     const chartStyle = {
       height: 466,
@@ -113,86 +118,100 @@ export default class TradingPlotChart extends Component {
       { x: moment(trade.close_date).valueOf(), y: trade.avg_price, trade }
     ) )
 
+
     return (
-      <FlexibleXYPlot {...chartStyle}>
-        {/* Style definitions */}
-        <GradientDefs>
-          <linearGradient id="CoolGradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="#F7931A" stopOpacity={0.2} />
-            <stop offset="100%" stopColor="#F7931A" stopOpacity={0.0} />
-          </linearGradient>
-        </GradientDefs>
-        <XAxis tickTotal={xTicks} tickFormat={ v => moment(v).format("MMM D")} />
-        <YAxis tickTotal={this.state.yTicks} orientation='right' style={styles.yAxis} />
-        <VerticalGridLines />
+      <div>
+        <DateRangePicker
+          startDate={this.state.minDate}
+          startDateId="your_unique_start_date_id"
+          endDate={this.state.maxDate}
+          endDateId="your_unique_end_date_id"
+          onDatesChange={({ startDate, endDate }) => this.setState({ minDate: startDate, maxDate: endDate })}
+          focusedInput={this.state.focusedInput}
+          onFocusChange={focusedInput => this.setState({ focusedInput })}
+          isOutsideRange={() => false}
+        />
 
-        {/* Price graph */}
-        <LineSeries stroke="#F7931A" data={priceData} />
-        <AreaSeries
-          stroke="none"
-          color={'url(#CoolGradient)'}
-          opacity={1}
-          className="areaSeries"
-          data={priceData} />
+        <FlexibleXYPlot {...chartStyle}>
+          {/* Style definitions */}
+          <GradientDefs>
+            <linearGradient id="CoolGradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="#F7931A" stopOpacity={0.2} />
+              <stop offset="100%" stopColor="#F7931A" stopOpacity={0.0} />
+            </linearGradient>
+          </GradientDefs>
+          <XAxis tickTotal={xTicks} tickFormat={ v => moment(v).format("MMM D")} />
+          <YAxis tickTotal={this.state.yTicks} orientation='right' style={styles.yAxis} />
+          <VerticalGridLines />
 
-        { hintLocation &&
-          <Hint
-            value={hintLocation}
-            align={{
+          {/* Price graph */}
+          <LineSeries stroke="#F7931A" data={priceData} />
+          <AreaSeries
+            stroke="none"
+            color={'url(#CoolGradient)'}
+            opacity={1}
+            className="areaSeries"
+            data={priceData} />
+
+          { hintLocation &&
+            <Hint
+              value={hintLocation}
+              align={{
                 horizontal: 'right',
                 vertical: 'top'
-            }} >
-            <div style={styles.currentPrice}>
-              <p
-                style={{
+              }} >
+              <div style={styles.currentPrice}>
+                <p
+                  style={{
                     padding: 0,
                     margin: 0
-                }}
-              >{currentPrice}</p>
-            </div>
-          </Hint>
-        }
-        { hintLocation &&
-          <Hint
-            style={styles.currentPriceLine}
-            value={hintLocation} >
-            {/* if there's a div it doesn't use the default Hint styling component */}
-            <div></div>
-          </Hint>
-        }
+                  }}
+                >{currentPrice}</p>
+              </div>
+            </Hint>
+          }
+          { hintLocation &&
+            <Hint
+              style={styles.currentPriceLine}
+              value={hintLocation} >
+              {/* if there's a div it doesn't use the default Hint styling component */}
+              <div></div>
+            </Hint>
+          }
 
-        <CustomSVGSeries data={buyTrades} customComponent={BuyIcon} />
-        <CustomSVGSeries data={sellTrades} customComponent={SellIcon} />
-        <MarkSeries
-          stroke="none"
-          strokeWidth={1}
-          fill="none"
-          size={16}
-          style={{
-            cursor: 'pointer'
-          }}
-          data={[...buyTrades, ...sellTrades]}
-          onValueMouseOver={v => this.setState({
-            hoveredCell: v
-          })}
-          onValueMouseOut={v => this.setState({
-            hoveredCell: null
-          })} />
-        {hoveredCell &&
-          <Hint value={hoveredCell}>
-            <ChartHoverCard
-              // All dummy values for testing
-              side={hoveredCell.trade.side}
-              base={hoveredCell.trade.market.base}
-              quote={hoveredCell.trade.market.quote}
-              price={hoveredCell.trade.avg_price}
-              amount={hoveredCell.trade.amount}
-              valueChange={100 * (hoveredCell.trade.avg_price - currentPrice) / currentPrice}
-              datetime={moment(hoveredCell.trade.close_date)}
-            />
-          </Hint>
-        }
-      </FlexibleXYPlot>
-    );
+          <CustomSVGSeries data={buyTrades} customComponent={BuyIcon} />
+          <CustomSVGSeries data={sellTrades} customComponent={SellIcon} />
+          <MarkSeries
+            stroke="none"
+            strokeWidth={1}
+            fill="none"
+            size={16}
+            style={{
+              cursor: 'pointer'
+            }}
+            data={[...buyTrades, ...sellTrades]}
+            onValueMouseOver={v => this.setState({
+              hoveredTrade: v
+            })}
+            onValueMouseOut={v => this.setState({
+              hoveredTrade: null
+            })} />
+          {hoveredTrade &&
+            <Hint value={hoveredTrade}>
+              <ChartHoverCard
+                // All dummy values for testing
+                side={hoveredTrade.trade.side}
+                base={hoveredTrade.trade.market.base}
+                quote={hoveredTrade.trade.market.quote}
+                price={hoveredTrade.trade.avg_price}
+                amount={hoveredTrade.trade.amount}
+                valueChange={100 * (hoveredTrade.trade.avg_price - currentPrice) / currentPrice}
+                datetime={moment(hoveredTrade.trade.close_date)}
+              />
+            </Hint>
+          }
+        </FlexibleXYPlot>
+      </div>
+        );
   }
 }
