@@ -45,8 +45,8 @@ export default ({ totals }) => {
             <div className="delta_cell">
               <h5>Today</h5>
               <div className="money_b_s">
-                <span className="plus_large">+</span>$337
-            <span className="money_s">.5</span>
+                <span className="plus_large">+</span>$777
+            <span className="money_s">.7</span>
               </div>
               <PercentageChangeIndicator valueChange={(Math.random() * 100).toFixed(2)} />
 
@@ -54,8 +54,8 @@ export default ({ totals }) => {
             <div className="delta_cell">
               <h5>7 Days</h5>
               <div className="money_b_s">
-                <span className="minus_large">-</span>$15
-            <span className="money_s">.4</span>
+                <span className="minus_large">-</span>$11
+            <span className="money_s">.1</span>
               </div>
               <PercentageChangeIndicator valueChange={(Math.random() * 100).toFixed(2)} />
 
@@ -63,8 +63,8 @@ export default ({ totals }) => {
             <div className="delta_cell last_cell">
               <h5>Profit</h5>
               <div className="money_b_s">
-                <span className="plus_large">+</span>$337
-            <span className="money_s">.5</span>
+                <span className="plus_large">+</span>$777
+            <span className="money_s">.7</span>
               </div>
               <PercentageChangeIndicator valueChange={(Math.random() * 100).toFixed(2)} />
 
@@ -72,9 +72,9 @@ export default ({ totals }) => {
           </div>
 
           <div className="control_area">
-            <div id="button_portfolio_graph" className="square_button">
+            {/* <div id="button_portfolio_graph" className="square_button">
               <div className="icon_chart"></div>
-            </div>
+            </div> */}
             <div id="button_glance_add" className="square_button_main">Add...</div>
           </div>
         </div>
