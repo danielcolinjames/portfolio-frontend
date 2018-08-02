@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import moment from 'moment';
 import './TransactionItem.css';
 import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
 
@@ -88,7 +88,7 @@ export default ({ trade, linkTo }) => {
             <Link to={linkTo}>{transactionHistoryItemFirstColumnContent}</Link>
           </td>
           <td className='transactionHistoryItemDateColumnData'>
-            <Link to={linkTo}><span className='transactionHistoryItemDateColumnMonthDay'>{trade.order_date}</span></Link>
+            <Link to={linkTo}><span className='transactionHistoryItemDateColumnMonthDay'>{moment(trade.order_date).format("D MMM Y, h:m a")}</span></Link>
           </td>
           <td className='transactionHistoryItemSourceColumnData'><Link to={linkTo}>{trade.market.exchange}</Link></td>
         </tr>
