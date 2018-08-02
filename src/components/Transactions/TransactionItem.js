@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './TransactionItem.css';
 import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
@@ -9,7 +10,7 @@ import BuyIcon from '../../assets/images/ui-icons/icon-buy@3x.png';
 import CryptoIcon from 'react-webfont-cryptocoins'
 
 
-export default ({ trade }) => {
+export default ({ trade, linkTo }) => {
 
     let transactionHistoryItemFirstColumnContent = null;
 
@@ -83,13 +84,13 @@ export default ({ trade }) => {
 
     return (
         <tr>
-            <td>
-                {transactionHistoryItemFirstColumnContent}
-            </td>
-            <td className='transactionHistoryItemDateColumnData'>
-                <span className='transactionHistoryItemDateColumnMonthDay'>{trade.order_date}</span>
-            </td>
-            <td className='transactionHistoryItemSourceColumnData'>{trade.market.exchange}</td>
+          <td>
+            <Link to={linkTo}>{transactionHistoryItemFirstColumnContent}</Link>
+          </td>
+          <td className='transactionHistoryItemDateColumnData'>
+            <Link to={linkTo}><span className='transactionHistoryItemDateColumnMonthDay'>{trade.order_date}</span></Link>
+          </td>
+          <td className='transactionHistoryItemSourceColumnData'><Link to={linkTo}>{trade.market.exchange}</Link></td>
         </tr>
     )
 }

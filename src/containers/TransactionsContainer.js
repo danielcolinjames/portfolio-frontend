@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Switch, Route } from 'react-router-dom';
 
 import { getTradesForCoin } from '../actions/trades';
 import TransactionList from '../components/Transactions/TransactionList';
@@ -34,7 +34,9 @@ class TransactionsContainer extends Component {
   render() {
     let coin = this.props.match.params.coin;
     let lastTrade = (this.props.trades && this.props.trades[coin]) ? this.props.trades[coin][0] : null;
-    let marketSlug = lastTrade ? lastTrade.market.slug : null;
+    let marketSlug = this.props.match.params.marketSlug ?
+      this.props.match.params.marketSlug :
+      lastTrade ? lastTrade.market.slug : null;
     return (
       // <div className="transactions container">
       //   <div className="transactions sidebar">
@@ -97,27 +99,19 @@ class TransactionsContainer extends Component {
         <div id='chartAndTransactions'>
           <div id='chartOverlay' />
           <div className="transactions graph">
-            <PriceGraphContainer coin={coin} marketSlug={marketSlug} />
+            {/* <PriceGraphContainer coin={coin} marketSlug={marketSlug} /> */}
+            <Switch>
+              <Route path="/transactions/:coin/:marketSlug/" component={PriceGraphContainer} />
+            </Switch>
+
           </div>
 
-          {/* {props.trades.map((trade, i) => {
-            return (
-            <TransactionsPageHistoryListItem
-            symbol={trade.symbol}
-            date={trade.close_date}
-            source={trade.exchange_account.exchange}
-            amount={trade.amount}
-            price={trade.cost}
-            side={trade.side} />
-            )
-          })} */}
-
-          {/* <div className="transactions list">
-          <h1>Transactions list!</h1> */}
           {lastTrade &&
-            <TransactionList coin={coin} trades={this.props.trades[coin]} />
+            <div>
+              <Redirect to={`/transactions/${coin}/${lastTrade.market.slug}/`}/>
+              <TransactionList coin={coin} trades={this.props.trades[coin]} />
+            </div>
           }
-          {/* </div> */}
 
         </div>
       </div>

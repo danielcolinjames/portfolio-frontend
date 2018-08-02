@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 import TransactionItem from './TransactionItem';
 
@@ -15,8 +14,7 @@ export default ({ trades, coin }) => (
         <th id='transactionHistoryTableSourceHeader'>Source</th>
       </tr>
       {trades.map((trade) => (
-        // <li key={trade.uuid}><Link to={`/transactions/${coin}/${trade.market.slug}/`}><TransactionItem trade={trade}/></Link></li>
-        <TransactionItem key={trade.uuid} trade={trade} />
+        <TransactionItem key={trade.uuid} trade={trade} linkTo={`/transactions/${coin}/${trade.market.slug}/`}/>
       ))}
     </tbody>
   </table>
