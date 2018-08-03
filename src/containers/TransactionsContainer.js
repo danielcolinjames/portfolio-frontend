@@ -98,7 +98,7 @@ class TransactionsContainer extends Component {
 
         <div id='chartAndTransactions'>
           {/* <div id='chartOverlay' /> */}
-          <div className="transactions graph">
+          <div id="chart">
             {/* <PriceGraphContainer coin={coin} marketSlug={marketSlug} /> */}
             <Switch>
               <Route path="/transactions/:coin/:marketSlug/" component={PriceGraphContainer} />

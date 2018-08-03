@@ -12,7 +12,7 @@
     left: 0;
     background-color: #eaeef1;
     margin-top: 160px;
-    box-shadow: 2px 0 4px 0 #bbb;
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.16);
     overflow: scroll;
     z-index: 2;
 }
@@ -136,7 +136,7 @@
 #chartAndTransactions {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+
     margin-left: 320px;
     margin-top: 160px;
     width: 100%;
