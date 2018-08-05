@@ -108,7 +108,9 @@ class TransactionsContainer extends Component {
 
           {lastTrade &&
             <div>
-              <Redirect to={`/transactions/${coin}/${lastTrade.market.slug}/`}/>
+              { this.props.location.pathname !== `/transactions/${coin}/${lastTrade.market.slug}/` &&
+                <Redirect to={`/transactions/${coin}/${lastTrade.market.slug}/`}/>
+              }
               <TransactionList coin={coin} trades={this.props.trades[coin]} />
             </div>
           }
