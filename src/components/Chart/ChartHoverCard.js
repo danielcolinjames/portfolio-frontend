@@ -3,7 +3,6 @@ import './ChartHoverCard.css';
 
 import PercentageChangeIndicator from '../Global/PercentageChangeIndicator';
 
-import btc from '../../assets/images/logos/bitcoin-logo@3x.png';
 import convertArrow from '../../assets/images/ui-icons/icon-arrow-large@3x.png';
 import CryptoIcon from 'react-webfont-cryptocoins'
 

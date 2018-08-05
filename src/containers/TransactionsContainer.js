@@ -34,9 +34,9 @@ class TransactionsContainer extends Component {
   render() {
     let coin = this.props.match.params.coin;
     let lastTrade = (this.props.trades && this.props.trades[coin]) ? this.props.trades[coin][0] : null;
-    let marketSlug = this.props.match.params.marketSlug ?
-      this.props.match.params.marketSlug :
-      lastTrade ? lastTrade.market.slug : null;
+    // let marketSlug = this.props.match.params.marketSlug ?
+    //   this.props.match.params.marketSlug :
+    //   lastTrade ? lastTrade.market.slug : null;
     return (
       // <div className="transactions container">
       //   <div className="transactions sidebar">

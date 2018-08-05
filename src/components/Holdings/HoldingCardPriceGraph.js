@@ -1,9 +1,9 @@
 import React from 'react';
 import {
     FlexibleXYPlot,
-    Hint,
+    // Hint,
     LineSeries,
-    MarkSeries,
+    // MarkSeries,
     GradientDefs,
     AreaSeries,
     CustomSVGSeries

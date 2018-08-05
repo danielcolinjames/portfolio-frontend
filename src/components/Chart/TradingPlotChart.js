@@ -25,10 +25,8 @@ import ChartHoverCard from './ChartHoverCard';
 
 import './tradingplot.css';
 
-if (!Array.prototype.last){
-    Array.prototype.last = function(){
-        return this[this.length - 1];
-    };
+function last(array){
+  return array[array.length - 1];
 }
 
 export default class TradingPlotChart extends Component {
@@ -98,10 +96,10 @@ export default class TradingPlotChart extends Component {
         { x: pricePoint[0], y: pricePoint[4] }
       ) ) : []
 
-    const currentPrice = this.props.priceGraph ? this.props.priceGraph.last()[4] : 0
+    const currentPrice = this.props.priceGraph ? last(this.props.priceGraph)[4] : 0
 
     const hintLocation = priceData.length > 0 && currentPrice ?
-      { x: priceData.last().x, y: currentPrice } : null;
+      { x: last(priceData).x, y: currentPrice } : null;
 
     const filteredTradesData = this.props.trades ?
       this.props.trades.filter( trade => {
