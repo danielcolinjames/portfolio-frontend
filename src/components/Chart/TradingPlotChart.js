@@ -211,6 +211,7 @@ export default class TradingPlotChart extends Component {
                 quote={hoveredTrade.trade.market.quote}
                 price={hoveredTrade.trade.avg_price}
                 amount={hoveredTrade.trade.amount}
+                cost={hoveredTrade.trade.cost}
                 valueChange={100 * (hoveredTrade.trade.avg_price - currentPrice) / currentPrice}
                 datetime={moment(hoveredTrade.trade.close_date)}
               />

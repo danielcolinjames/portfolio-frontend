@@ -11,7 +11,7 @@ const ChartHoverCardTopBarFrom = (props) => (
   <div className='chartHoverCardTopBarFrom'>
     <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.base} />
     <p className='chartHoverCardTopBarFromName'>
-      {props.amount}
+      {props.amount && parseFloat(props.amount).toFixed(4)}
     </p>
   </div>
 )
@@ -19,10 +19,10 @@ const ChartHoverCardTopBarFrom = (props) => (
 const ChartHoverCardTopBarTo = (props) => (
   <div className='chartHoverCardTopBarTo'>
     <p className='chartHoverCardTopBarToAmount'>
-      <span className='dollars'>
+      {/* <span className='dollars'> */}
         <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
-        {(props.amount * props.price).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-      <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span>
+        {props.cost && parseFloat(props.cost).toFixed(4)}
+      {/* <span className='cents'>.{Math.round((props.amount * props.price) * 100) % 100}</span> */}
     </p>
   </div>
 )
@@ -66,10 +66,11 @@ const ChartHoverCard = (props) => {
                 </p>
                 <div className='chartHoverCardPriceSectionPriceContainer'>
                   <p className='chartHoverCardPriceSectionPrice'>
-                    <span className='dollars'>
+                    {/* <span className='dollars'> */}
                       <CryptoIcon className='chartHoverCardTopBarFromLogo' coin={props.quote} />
-                      {props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span>
-                    <span className='cents'>.{Math.round(props.price * 100) % 100}</span>
+                      {props.price && parseFloat(props.price.toFixed(4))}
+                      {/* {props.price.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,')}</span> */}
+                    {/* <span className='cents'>.{Math.round(props.price * 100) % 100}</span> */}
                   </p>
                   <PercentageChangeIndicator valueChange={props.valueChange} />
                 </div>
