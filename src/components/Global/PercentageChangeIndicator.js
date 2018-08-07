@@ -13,14 +13,14 @@ const percentageChangeIndicator = (props) => {
         props.valueChange > 0 ? percentageChangeIndicatorComponent = (
             <div className='percentChangeContainer'>
                 <img className='percentChangeTriangleUp' src={IncreaseIcon} alt="" />
-                <p className='percentChangeValueUp'>{props.valueChange}
+                <p className='percentChangeValueUp'>{props.valueChange && parseFloat(props.valueChange).toFixed(2)}
                     <span className='percentChangePercentUp'>%</span>
                 </p>
             </div>
         ) : (
             <div className='percentChangeContainer'>
                 <img className='percentChangeTriangleDown' src={DecreaseIcon} alt="" />
-                <p className='percentChangeValueDown'>{props.valueChange}
+                <p className='percentChangeValueDown'>{props.valueChange && parseFloat(props.valueChange).toFixed(2)}
                     <span className='percentChangePercentDown'>%</span>
                 </p>
             </div>
