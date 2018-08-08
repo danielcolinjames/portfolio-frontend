@@ -2,7 +2,8 @@ import React from 'react';
 
 import './FullHeader.css';
 
-import logo from '../../assets/images/logos/temp_logo.png';
+// import logo from '../../assets/images/logos/temp_logo.png';
+import logo2 from '../../assets/images/logos/AbacusLogo.svg';
 
 import PercentageChangeIndicator from '../Global/PercentageChangeIndicator';
 
@@ -20,7 +21,7 @@ export default ({ totals, user }) => {
       </dl> */}
 
       <div id="menu_bar">
-        <img id="logo" src={logo} alt="" />
+        <img id="logo" src={logo2} alt="" />
         <div id="user_portal" className="blue">{user ? `hi ${user.username}!` : "Sign in"}</div>
       </div>
 
