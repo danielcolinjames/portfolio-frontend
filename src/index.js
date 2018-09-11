@@ -14,7 +14,7 @@ const { store, persistor } = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter>
+      <BrowserRouter basename="/app">
         <App />
       </BrowserRouter>
     </PersistGate>
